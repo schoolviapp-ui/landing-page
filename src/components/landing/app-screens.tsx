@@ -40,7 +40,7 @@ export function AppFrame({
   children: ReactNode;
 }) {
   return (
-    <div className="flex w-[1100px] overflow-hidden rounded-[22px] bg-stone-50 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09),0_6px_6px_-2px_rgba(0,0,0,0.06)]">
+    <div className="flex w-[1100px] overflow-hidden rounded-[22px] md:w-full bg-stone-50 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09),0_6px_6px_-2px_rgba(0,0,0,0.06)]">
       <aside className="flex w-14 shrink-0 flex-col items-center gap-1 border-r border-stone-300 bg-stone-100 py-4">
         <span className="mb-3 grid size-7 place-items-center rounded-md bg-brand text-white">
           <LayersIcon className="size-4" />
@@ -411,7 +411,7 @@ export function DashboardCapture() {
       width={2000}
       height={1146}
       priority
-      className="w-[1100px] rounded-[22px] shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09),0_6px_6px_-2px_rgba(0,0,0,0.06)]"
+      className="h-auto w-[1100px] rounded-[22px] md:w-full shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09),0_6px_6px_-2px_rgba(0,0,0,0.06)]"
     />
   );
 }

@@ -34,7 +34,7 @@ export function ProductPanel() {
       </div>
 
       <CloudPanel tone="lilac" className="mt-8 h-[420px] rounded-[40px] md:h-[640px]">
-        <div key={active} className="rise absolute left-6 top-14 origin-top-left scale-[0.62] md:left-16 md:top-24 md:scale-100">
+        <div key={active} className="rise absolute left-6 top-14 w-[1100px] origin-top-left scale-[0.62] md:inset-x-16 md:top-24 md:w-auto md:scale-100">
           <Screen />
         </div>
       </CloudPanel>
