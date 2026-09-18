@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Urbanist } from "next/font/google";
+import { Jost, Urbanist } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const jost = Jost({
   variable: "--font-sans",
   subsets: ["latin"],
 });
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`${inter.variable} ${urbanist.variable} h-full antialiased`}>
+    <html lang="fr" className={`${jost.variable} ${urbanist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col text-foreground">{children}</body>
     </html>
   );

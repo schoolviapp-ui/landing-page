@@ -15,7 +15,6 @@ export const CTA = {
 };
 
 export const HERO = {
-  eyebrow: { price: "1 000 FCFA", suffix: "par eleve et par an", note: "Enseignants et personnel illimites" },
   title: ["Gerer votre ecole", "redevient un plaisir"],
   description: [
     "La plateforme tout-en-un pour les ecoles, colleges et lycees :",

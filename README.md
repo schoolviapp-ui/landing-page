@@ -6,7 +6,7 @@ Site vitrine public de Schoolvi (projet Next.js separe de l'application).
 
 - Next.js 16 (App Router, Turbopack) + TypeScript + Tailwind CSS v4
 - `lucide-react` pour les icones, `cn` pour les classes, animations en CSS pur
-- Design inspire de https://sunbeam.framer.media/ (Urbanist pour les titres, Inter pour le texte, palette creme + bleu Schoolvi #2563eb)
+- Polices : Urbanist pour les titres, Jost pour le texte ; palette creme + bleu Schoolvi #2563eb
 
 ## Demarrage
 

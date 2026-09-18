@@ -1,4 +1,3 @@
-import { StarIcon } from "lucide-react";
 import type { CSSProperties } from "react";
 
 import { Blob } from "@/components/ui/blob";
@@ -19,23 +18,6 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto flex max-w-[1240px] flex-col items-center px-6 pb-24 pt-32 text-center md:pt-48">
-        <p
-          style={delay(0)}
-          className="rise flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1 rounded-full border border-brand/20 bg-brand-light/60 py-2 pl-4 pr-5 text-[15px] text-[#1e40af] md:text-[17px]"
-        >
-          <span className="flex self-center text-[#f5b301]">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <StarIcon key={i} className="size-3.5 fill-current" />
-            ))}
-          </span>
-          <span>
-            <strong className="font-display text-[22px] font-semibold text-brand md:text-[26px]">{HERO.eyebrow.price}</strong>{" "}
-            {HERO.eyebrow.suffix}
-          </span>
-          <span className="hidden text-[#1e40af]/50 sm:inline" aria-hidden>&middot;</span>
-          <span className="hidden sm:inline">{HERO.eyebrow.note}</span>
-        </p>
-
         <h1
           style={delay(1)}
           className="rise font-display mt-6 text-[44px] leading-[1.04] text-ink sm:text-[56px] md:text-[64px]"
