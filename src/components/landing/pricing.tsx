@@ -23,12 +23,19 @@ export function Pricing() {
       <div className="mx-auto mt-14 max-w-[920px] rounded-[32px] bg-stone-200 p-2.5">
         <div className="grid rounded-[24px] bg-white md:grid-cols-[1.15fr_1fr]">
           <div className="p-8 md:p-10">
-            <p className="font-display text-[22px] text-ink">Estimez votre abonnement</p>
-            <p className="mt-1 text-[15px] text-muted-foreground">
-              {fmt.format(PRICING.pricePerStudentPerYear)} {PRICING.currency} par eleve et par an
+            <p className="flex items-baseline gap-2">
+              <span className="font-display text-[56px] leading-none text-brand md:text-[64px]">
+                {fmt.format(PRICING.pricePerStudentPerYear)}
+              </span>
+              <span className="font-display text-[26px] text-brand">{PRICING.currency}</span>
+              <span className="text-[16px] text-muted-foreground">/ eleve / an</span>
             </p>
+            <p className="mt-2 text-[15px] text-muted-foreground">
+              Enseignants et personnel illimites, tous les modules inclus.
+            </p>
+            <p className="font-display mt-8 text-[22px] text-ink">Estimez votre abonnement</p>
 
-            <div className="mt-8">
+            <div className="mt-4">
               <label htmlFor="students" className="flex items-baseline justify-between">
                 <span className="text-[15px] text-muted-foreground">Nombre d&apos;eleves</span>
                 <span className="font-display text-[40px] leading-none text-ink">{fmt.format(students)}</span>
