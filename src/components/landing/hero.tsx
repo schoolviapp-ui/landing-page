@@ -21,9 +21,9 @@ export function Hero() {
       <div className="relative mx-auto flex max-w-[1240px] flex-col items-center px-6 pb-24 pt-32 text-center md:pt-48">
         <p
           style={delay(0)}
-          className="rise flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-brand/20 bg-brand-light/60 py-2 pl-4 pr-5 text-[15px] text-[#1e40af] md:text-[17px]"
+          className="rise flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1 rounded-full border border-brand/20 bg-brand-light/60 py-2 pl-4 pr-5 text-[15px] text-[#1e40af] md:text-[17px]"
         >
-          <span className="flex text-brand">
+          <span className="flex self-center text-[#f5b301]">
             {Array.from({ length: 5 }).map((_, i) => (
               <StarIcon key={i} className="size-3.5 fill-current" />
             ))}
@@ -32,7 +32,7 @@ export function Hero() {
             <strong className="font-display text-[22px] font-semibold text-brand md:text-[26px]">{HERO.eyebrow.price}</strong>{" "}
             {HERO.eyebrow.suffix}
           </span>
-          <span className="hidden text-[#1e40af]/60 sm:inline">&middot;</span>
+          <span className="hidden text-[#1e40af]/50 sm:inline" aria-hidden>|</span>
           <span className="hidden sm:inline">{HERO.eyebrow.note}</span>
         </p>
 
