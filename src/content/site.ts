@@ -19,8 +19,8 @@ export const CTA = {
 export const HERO = {
   title: ["Gerer votre ecole", "redevient un plaisir"],
   description: [
-    "La plateforme tout-en-un pour les ecoles, colleges et lycees :",
-    "eleves, presences, notes, emploi du temps et frais de scolarite.",
+    "Le logiciel de gestion scolaire tout-en-un pour les ecoles, colleges et lycees du Togo :",
+    "eleves, presences, notes, emploi du temps et frais de scolarite en FCFA.",
   ],
 };
 
@@ -58,7 +58,7 @@ export const VALUE_PROPS = [
   },
 ] as const;
 
-export const SOCIAL_PROOF = "Pense pour les ecoles, colleges, lycees et universites";
+export const SOCIAL_PROOF = "Pense pour les ecoles, colleges, lycees et universites du Togo";
 
 export type Module = {
   id: string;
@@ -155,7 +155,7 @@ export const UNIFIED = {
 export const PRICING = {
   title: "Un tarif simple, sans surprise",
   description:
-    "Vous payez uniquement pour vos eleves. Enseignants, personnel et modules sont inclus, sans limite.",
+    "Vous payez uniquement pour vos eleves, en FCFA. Enseignants, personnel et modules sont inclus, sans limite.",
   pricePerStudentPerYear: 1000,
   currency: "FCFA",
   minStudents: 50,
@@ -175,6 +175,11 @@ export const PRICING = {
 };
 
 export const FAQ = [
+  {
+    question: "Schoolvi est-il adapte aux ecoles du Togo ?",
+    answer:
+      "Oui. Schoolvi est pense pour les etablissements togolais : facturation en FCFA, paiement par virement ou en especes, assistance par WhatsApp et une interface en francais utilisable depuis un ordinateur ou un telephone, a Lome comme dans les autres regions.",
+  },
   {
     question: "Combien coute Schoolvi ?",
     answer:
@@ -209,6 +214,8 @@ export const FINAL_CTA = {
 };
 
 export const FOOTER = {
+  tagline: "Logiciel de gestion scolaire pour les ecoles, colleges et lycees du Togo.",
+  location: "Lome, Togo",
   columns: [
     {
       title: "Produit",
@@ -230,10 +237,10 @@ export const FOOTER = {
       ],
     },
     {
-      title: "Ressources",
+      title: "Legal",
       links: [
-        { label: "Conditions d'utilisation", href: "#" },
-        { label: "Politique de confidentialite", href: "#" },
+        { label: "Conditions generales d'utilisation", href: "/cgu" },
+        { label: "Politique de confidentialite", href: "/confidentialite" },
       ],
     },
   ],

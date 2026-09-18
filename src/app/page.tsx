@@ -7,12 +7,14 @@ import { Pricing } from "@/components/landing/pricing";
 import { ProductPanel } from "@/components/landing/product-panel";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
+import { StructuredData } from "@/components/landing/structured-data";
 import { Unified } from "@/components/landing/unified";
 import { ValueProps } from "@/components/landing/value-props";
 
 export default function HomePage() {
   return (
     <>
+      <StructuredData />
       <SiteHeader />
       <main className="flex-1">
         <Hero />

@@ -38,6 +38,17 @@ Le nom dans `wrangler.jsonc` doit rester identique au nom du projet Cloudflare.
 Si un jour la landing a besoin de code serveur (formulaire, API), passer a OpenNext
 (`@opennextjs/cloudflare`) et retirer `output: "export"`.
 
+## SEO
+
+- Metadonnees completes dans `src/app/layout.tsx` (title, description, keywords, canonical, Open Graph fr_TG,
+  Twitter, robots, geo Togo) ; `src/lib/site.ts` centralise l'URL du site.
+- `src/app/opengraph-image.tsx` et `src/app/icon.tsx` generent l'image de partage et le favicon au build.
+- `src/app/robots.ts` et `src/app/sitemap.ts` produisent `robots.txt` et `sitemap.xml`.
+- `src/components/landing/structured-data.tsx` : JSON-LD Organization, WebSite, SoftwareApplication
+  (offre 1 000 XOF / eleve / an) et FAQPage.
+- Pages legales : `/cgu` et `/confidentialite` (droit togolais, loi n. 2019-014). Les mentions entre crochets
+  (raison sociale, RCCM, adresse) sont a completer.
+
 ## Tarification
 
 L'estimateur (`src/components/landing/pricing.tsx`) lit `PRICING` dans `src/content/site.ts` :
