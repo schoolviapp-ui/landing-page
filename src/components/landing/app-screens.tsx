@@ -10,6 +10,7 @@ import {
   SearchIcon,
   WalletIcon,
 } from "lucide-react";
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 import type { ModuleTabId } from "@/content/site";
@@ -402,8 +403,21 @@ export function TimetableScreen() {
   );
 }
 
+export function DashboardCapture() {
+  return (
+    <Image
+      src="/screens/dashboard.webp"
+      alt="Tableau de bord Schoolvi : indicateurs eleves, enseignants, classes, reclamations et fonds collectes"
+      width={2000}
+      height={1146}
+      priority
+      className="w-[1100px] rounded-[22px] shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09),0_6px_6px_-2px_rgba(0,0,0,0.06)]"
+    />
+  );
+}
+
 export const SCREENS: Record<ModuleTabId, () => ReactNode> = {
-  dashboard: DashboardScreen,
+  dashboard: DashboardCapture,
   students: StudentsScreen,
   fees: FeesScreen,
   exams: ExamsScreen,
