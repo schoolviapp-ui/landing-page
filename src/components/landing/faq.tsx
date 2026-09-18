@@ -4,7 +4,7 @@ import { FAQ } from "@/content/site";
 
 export function Faq() {
   return (
-    <section id="faq" className="mx-auto max-w-[1240px] px-4 pt-20 sm:px-6 sm:pt-32">
+    <section id="faq" className="mx-auto max-w-[1240px] scroll-mt-24 px-4 pt-20 sm:px-6 sm:pt-32">
       <div className="grid gap-10 md:grid-cols-[1fr_1.4fr]">
         <h2 className="font-display text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">
           Questions

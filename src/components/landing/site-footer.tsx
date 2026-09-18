@@ -27,7 +27,7 @@ export function SiteFooter() {
                 <ul className="mt-4 space-y-3 text-[16px] font-medium text-ink">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      {link.href.startsWith("/") ? (
+                      {link.href.startsWith("/") && !link.href.startsWith("/#") ? (
                         <Link href={link.href} className="transition-opacity hover:opacity-60">
                           {link.label}
                         </Link>

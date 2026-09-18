@@ -13,7 +13,7 @@ export function ProductPanel() {
   const Screen = SCREENS[active];
 
   return (
-    <section id="produit" className="mx-auto max-w-[1240px] px-4 sm:px-6">
+    <section id="produit" className="mx-auto max-w-[1240px] scroll-mt-24 px-4 sm:px-6">
       <div role="tablist" className="-mx-4 flex items-center gap-1 overflow-x-auto px-4 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:justify-center sm:px-0 md:gap-6 [&::-webkit-scrollbar]:hidden">
         {MODULE_TABS.map((tab) => (
           <button

@@ -31,8 +31,7 @@ export function Hero() {
           style={delay(2)}
           className="rise mt-6 max-w-2xl text-[16px] leading-relaxed text-muted-foreground sm:mt-7 sm:text-[17px] md:text-[19px]"
         >
-          {HERO.description[0]}
-          <br className="hidden md:block" /> {HERO.description[1]}
+          {HERO.description[0]} {HERO.description[1]}
         </p>
 
         <div style={delay(3)} className="rise mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-10">

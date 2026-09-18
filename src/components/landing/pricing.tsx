@@ -14,7 +14,7 @@ export function Pricing() {
   const progress = ((students - PRICING.minStudents) / (PRICING.maxStudents - PRICING.minStudents)) * 100;
 
   return (
-    <section id="tarifs" className="mx-auto max-w-[1240px] px-4 pt-20 sm:px-6 sm:pt-32">
+    <section id="tarifs" className="mx-auto max-w-[1240px] scroll-mt-24 px-4 pt-20 sm:px-6 sm:pt-32">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="font-display text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">{PRICING.title}</h2>
         <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground md:text-[19px]">{PRICING.description}</p>

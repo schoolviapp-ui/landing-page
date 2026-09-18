@@ -4,7 +4,7 @@ import { CTA, FINAL_CTA } from "@/content/site";
 
 export function FinalCta() {
   return (
-    <section id="contact" className="relative mx-auto max-w-[1240px] overflow-hidden px-6 pb-8 pt-24 sm:pt-40">
+    <section id="contact" className="relative mx-auto max-w-[1240px] scroll-mt-24 overflow-hidden px-6 pb-8 pt-24 sm:pt-40">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <Blob shape="diamond" tone="pink" className="absolute left-[8%] top-[30%] size-12" />
         <Blob shape="dot" tone="brand" className="absolute right-[10%] top-[6%] size-10 md:right-[20%] md:top-[40%]" />

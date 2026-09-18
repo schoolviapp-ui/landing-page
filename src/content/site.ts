@@ -1,11 +1,11 @@
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
 export const NAV_LINKS = [
-  { label: "Produit", href: "#produit" },
-  { label: "Modules", href: "#modules" },
-  { label: "Tarifs", href: "#tarifs" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Produit", href: "/#produit" },
+  { label: "Modules", href: "/#modules" },
+  { label: "Tarifs", href: "/#tarifs" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export const DEMO_URL = "https://calendly.com/schoolvi-app/30min";
@@ -220,19 +220,19 @@ export const FOOTER = {
     {
       title: "Produit",
       links: [
-        { label: "Eleves & classes", href: "#modules" },
-        { label: "Presences", href: "#modules" },
-        { label: "Examens & bulletins", href: "#modules" },
-        { label: "Frais de scolarite", href: "#modules" },
-        { label: "Emploi du temps", href: "#modules" },
+        { label: "Eleves & classes", href: "/#modules" },
+        { label: "Presences", href: "/#modules" },
+        { label: "Examens & bulletins", href: "/#modules" },
+        { label: "Frais de scolarite", href: "/#modules" },
+        { label: "Emploi du temps", href: "/#modules" },
       ],
     },
     {
       title: "Entreprise",
       links: [
-        { label: "Tarifs", href: "#tarifs" },
-        { label: "FAQ", href: "#faq" },
-        { label: "Contact", href: "#contact" },
+        { label: "Tarifs", href: "/#tarifs" },
+        { label: "FAQ", href: "/#faq" },
+        { label: "Contact", href: "/#contact" },
         { label: "Se connecter", href: `${APP_URL}/login` },
       ],
     },

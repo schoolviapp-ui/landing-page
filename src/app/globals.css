@@ -65,10 +65,6 @@
   --sky: #69b2ff;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: var(--font-sans), system-ui, sans-serif;
   background: var(--background);

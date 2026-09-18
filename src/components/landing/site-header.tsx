@@ -1,6 +1,7 @@
 "use client";
 
 import { MenuIcon, XIcon } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 import { Logo } from "@/components/landing/logo";
@@ -12,18 +13,18 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 bg-stone-50/85 backdrop-blur-md">
-      <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between px-4 sm:px-6 lg:h-[88px]">
+      <div className="mx-auto grid h-[72px] max-w-[1240px] grid-cols-[1fr_auto] items-center px-4 sm:px-6 lg:h-[88px] lg:grid-cols-[1fr_auto_1fr]">
         <Logo />
 
-        <nav className="hidden items-center gap-7 text-[15px] font-medium text-ink lg:flex">
+        <nav className="hidden items-center justify-center gap-7 text-[15px] font-medium text-ink lg:flex">
           {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className="transition-opacity hover:opacity-60">
+            <Link key={link.href} href={link.href} className="transition-opacity hover:opacity-60">
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden items-center justify-end gap-2 lg:flex">
           <PillButton href={CTA.login.href} variant="soft" className="h-11 px-5">
             {CTA.login.label}
           </PillButton>
@@ -36,7 +37,7 @@ export function SiteHeader() {
           type="button"
           aria-label="Menu"
           onClick={() => setOpen((v) => !v)}
-          className="grid size-10 place-items-center rounded-full text-ink transition-colors hover:bg-stone-200 lg:hidden"
+          className="grid size-10 place-items-center justify-self-end rounded-full text-ink transition-colors hover:bg-stone-200 lg:hidden"
         >
           {open ? <XIcon className="size-6" /> : <MenuIcon className="size-6" />}
         </button>
@@ -46,9 +47,9 @@ export function SiteHeader() {
         <div className="border-t border-stone-300 bg-stone-50 px-6 py-5 lg:hidden">
           <nav className="flex flex-col gap-4 text-[17px] font-medium">
             {NAV_LINKS.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+              <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="mt-6 flex flex-col gap-2">

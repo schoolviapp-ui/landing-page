@@ -1,6 +1,7 @@
 import { Faq } from "@/components/landing/faq";
 import { FinalCta } from "@/components/landing/final-cta";
 import { FloatingCta } from "@/components/landing/floating-cta";
+import { HashScroll } from "@/components/landing/hash-scroll";
 import { Hero } from "@/components/landing/hero";
 import { Modules } from "@/components/landing/modules";
 import { Pricing } from "@/components/landing/pricing";
@@ -15,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <StructuredData />
+      <HashScroll />
       <SiteHeader />
       <main className="flex-1">
         <Hero />
