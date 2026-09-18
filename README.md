@@ -57,8 +57,7 @@ L'estimateur (`src/components/landing/pricing.tsx`) lit `PRICING` dans `src/cont
 ## A faire avant mise en ligne
 
 - Remplacer les temoignages fictifs (`TESTIMONIALS` dans `src/content/site.ts`) par de vrais retours
-- Renseigner l'adresse de contact (`CTA.contact` pointe sur `mailto:contact@schoolvi.app`)
-- Ajouter les pages Conditions / Confidentialite (liens `#` dans `FOOTER`)
+- Completer les mentions entre crochets des pages /cgu et /confidentialite
 
 ## Conventions
 

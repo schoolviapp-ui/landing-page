@@ -13,7 +13,7 @@ export const DEMO_URL = "https://calendly.com/schoolvi-app/30min";
 export const CTA = {
   primary: { label: "Demander une demo", href: DEMO_URL },
   login: { label: "Se connecter", href: `${APP_URL}/login` },
-  contact: { label: "Nous contacter", href: "mailto:contact@schoolvi.app" },
+  contact: { label: "Nous contacter", href: "mailto:contact@schoolvi.co" },
 };
 
 export const HERO = {
