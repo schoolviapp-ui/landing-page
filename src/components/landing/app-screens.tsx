@@ -417,6 +417,11 @@ const CAPTURES = {
     src: "/screens/students.webp",
     alt: "Profil d'un eleve dans Schoolvi : moyenne du trimestre, rang, evolution et bulletin par matiere",
   },
+  assistant: {
+    src: "/screens/assistant.webp",
+    alt: "Assistant IA de Schoolvi : posez une question, il repond avec les donnees de l'etablissement",
+    height: 1142,
+  },
   timetable: {
     src: "/screens/timetable.webp",
     alt: "Emploi du temps hebdomadaire d'une classe dans Schoolvi, par matiere, enseignant et salle",
@@ -424,13 +429,13 @@ const CAPTURES = {
 } as const;
 
 function Capture({ id, priority = false }: { id: keyof typeof CAPTURES; priority?: boolean }) {
-  const { src, alt } = CAPTURES[id];
+  const { src, alt, height = 1146 } = CAPTURES[id] as { src: string; alt: string; height?: number };
   return (
     <Image
       src={src}
       alt={alt}
       width={2000}
-      height={1146}
+      height={height}
       priority={priority}
       className="h-auto w-[1100px] rounded-[22px] md:w-full shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09),0_6px_6px_-2px_rgba(0,0,0,0.06)]"
     />
@@ -518,6 +523,6 @@ export const SCREENS: Record<ModuleTabId, () => ReactNode> = {
   dashboard: () => <Capture id="dashboard" priority />,
   students: () => <Capture id="students" />,
   fees: FeesScreen,
-  assistant: AssistantScreen,
+  assistant: () => <Capture id="assistant" />,
   timetable: () => <Capture id="timetable" />,
 };
