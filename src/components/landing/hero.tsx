@@ -32,7 +32,7 @@ export function Hero() {
             <strong className="font-display text-[22px] font-semibold text-brand md:text-[26px]">{HERO.eyebrow.price}</strong>{" "}
             {HERO.eyebrow.suffix}
           </span>
-          <span className="hidden text-[#1e40af]/50 sm:inline" aria-hidden>|</span>
+          <span className="hidden text-[#1e40af]/50 sm:inline" aria-hidden>&middot;</span>
           <span className="hidden sm:inline">{HERO.eyebrow.note}</span>
         </p>
 
