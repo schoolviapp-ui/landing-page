@@ -23,12 +23,14 @@ export const HERO = {
 };
 
 export const MODULE_TABS = [
+  { id: "dashboard", label: "Tableau de bord" },
   { id: "students", label: "Eleves" },
-  { id: "attendance", label: "Presences" },
-  { id: "grades", label: "Notes" },
+  { id: "fees", label: "Frais de scolarite" },
+  { id: "exams", label: "Examens & bulletins" },
   { id: "timetable", label: "Emploi du temps" },
-  { id: "fees", label: "Frais" },
 ] as const;
+
+export type ModuleTabId = (typeof MODULE_TABS)[number]["id"];
 
 export const VALUE_PROPS = [
   {

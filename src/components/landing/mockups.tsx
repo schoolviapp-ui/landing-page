@@ -1,5 +1,4 @@
 import {
-  BellIcon,
   BookOpenIcon,
   CalendarClockIcon,
   CheckIcon,
@@ -7,7 +6,6 @@ import {
   GraduationCapIcon,
   LayoutDashboardIcon,
   LayersIcon,
-  SearchIcon,
   WalletIcon,
   XIcon,
 } from "lucide-react";
@@ -44,97 +42,6 @@ const STUDENTS = [
   { name: "Kofi Mensah", cls: "4eme C", status: "present" },
   { name: "Nadia Traore", cls: "3eme A", status: "late" },
 ];
-
-const STATUS = {
-  present: { label: "Present", cls: "bg-brand-light text-[#1e40af]" },
-  absent: { label: "Absent", cls: "bg-[#ffd6d6] text-[#a12b2b]" },
-  late: { label: "Retard", cls: "bg-[#ffe9b8] text-[#8a5a00]" },
-};
-
-export function DashboardMockup({ className }: { className?: string }) {
-  return (
-    <div
-      className={cn(
-        "flex overflow-hidden rounded-[22px] bg-stone-50 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09),0_6px_6px_-2px_rgba(0,0,0,0.06)]",
-        className,
-      )}
-    >
-      <Sidebar />
-      <div className="min-w-0 flex-1 p-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h4 className="font-display text-[22px] font-medium tracking-tight">Tableau de bord</h4>
-            <p className="text-stone-500">Lycee Demo - Jeudi 18 septembre</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="flex h-8 items-center gap-2 rounded-full border border-stone-300 bg-white px-3 text-stone-400">
-              <SearchIcon className="size-3" /> Rechercher
-            </span>
-            <span className="grid size-8 place-items-center rounded-full border border-stone-300 bg-white">
-              <BellIcon className="size-3.5" />
-            </span>
-            <span className="h-8 rounded-full bg-ink px-3 leading-8 text-white">Faire l&apos;appel</span>
-          </div>
-        </div>
-
-        <div className="mt-5 grid grid-cols-4 gap-3">
-          {[
-            ["Eleves", "1 248", "+32 ce mois"],
-            ["Presence du jour", "96,4 %", "43 absents"],
-            ["Fonds collectes", "18,4 M", "FCFA - 74 %"],
-            ["Reclamations", "7", "3 en attente"],
-          ].map(([label, value, sub]) => (
-            <div key={label} className="rounded-xl border border-stone-300 bg-white p-3">
-              <p className="text-stone-500">{label}</p>
-              <p className="font-display mt-1 text-[20px] font-medium tracking-tight">{value}</p>
-              <p className="text-[10px] text-stone-400">{sub}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-3 grid grid-cols-[1.4fr_1fr] gap-3">
-          <div className="rounded-xl border border-stone-300 bg-white p-3">
-            <div className="flex items-center justify-between">
-              <p className="font-semibold">Presences du jour</p>
-              <span className="rounded-full bg-stone-100 px-2 py-0.5 text-[10px]">6eme A</span>
-            </div>
-            <table className="mt-2 w-full">
-              <tbody>
-                {STUDENTS.map((s) => (
-                  <tr key={s.name} className="border-t border-stone-200">
-                    <td className="py-1.5 font-medium">{s.name}</td>
-                    <td className="text-stone-400">{s.cls}</td>
-                    <td className="text-right">
-                      <span className={cn("rounded-full px-2 py-0.5 text-[10px]", STATUS[s.status as keyof typeof STATUS].cls)}>
-                        {STATUS[s.status as keyof typeof STATUS].label}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="rounded-xl border border-stone-300 bg-white p-3">
-            <p className="font-semibold">Fonds collectes</p>
-            <div className="mt-3 flex h-24 items-end gap-1.5">
-              {[35, 55, 40, 70, 62, 85, 78, 92].map((h, i) => (
-                <span
-                  key={i}
-                  className={cn("flex-1 rounded-t-md", i === 7 ? "bg-brand" : "bg-stone-200")}
-                  style={{ height: `${h}%` }}
-                />
-              ))}
-            </div>
-            <div className="mt-2 flex justify-between text-[10px] text-stone-400">
-              <span>Fev</span>
-              <span>Sep</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export function AttendanceMockup({ className }: { className?: string }) {
   return (

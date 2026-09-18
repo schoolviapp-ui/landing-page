@@ -5,6 +5,7 @@ import {
   FileTextIcon,
   GraduationCapIcon,
   IdCardIcon,
+  LayoutDashboardIcon,
   LightbulbIcon,
   MessageSquareWarningIcon,
   NotebookPenIcon,
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 
 const ICONS = {
+  dashboard: LayoutDashboardIcon,
   students: GraduationCapIcon,
   classes: BookOpenIcon,
   attendance: ClipboardCheckIcon,

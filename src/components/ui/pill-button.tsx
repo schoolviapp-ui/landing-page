@@ -17,7 +17,7 @@ export function PillButton({ variant = "soft", className, children, ...props }: 
         )}
         {...props}
       >
-        <span className="grid size-9 place-items-center rounded-full bg-ink text-white transition-transform group-hover:translate-x-0.5">
+        <span className="grid size-9 place-items-center rounded-full bg-brand text-white transition-transform group-hover:translate-x-0.5">
           <ChevronRightIcon className="size-4" strokeWidth={2.5} />
         </span>
         {children}
