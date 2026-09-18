@@ -3,6 +3,12 @@ import { ModuleIcon } from "@/components/ui/module-icon";
 import { PillButton } from "@/components/ui/pill-button";
 import { CTA, MODULES } from "@/content/site";
 
+const TONES = {
+  sky: "bg-[#e4eefc]",
+  lilac: "bg-[#efe6fb]",
+  mint: "bg-[#e3f5e8]",
+};
+
 const MOCKUPS = {
   students: <StudentsMockup className="w-[720px]" />,
   grades: <GradesMockup className="w-[640px]" />,
@@ -23,7 +29,7 @@ export function Modules() {
           <article
             key={module.id}
             style={{ top: `${112 + i * 24}px` }}
-            className="sticky grid min-h-[560px] gap-8 rounded-[40px] bg-stone-200 p-8 md:grid-cols-[1fr_1.1fr] md:p-12"
+            className={`sticky grid min-h-[560px] gap-8 rounded-[40px] p-8 md:grid-cols-[1fr_1.1fr] md:p-12 ${TONES[module.tone]}`}
           >
             <div className="flex flex-col">
               <h3 className="font-display text-[34px] font-medium text-ink md:text-[40px]">{module.title}</h3>
@@ -32,7 +38,7 @@ export function Modules() {
                 {module.tags.map((tag) => (
                   <li
                     key={tag.label}
-                    className="flex items-center gap-2.5 rounded-full border border-stone-300 bg-white px-4 py-2.5 text-[16px] font-medium text-ink"
+                    className="flex items-center gap-2.5 rounded-full border border-black/5 bg-white px-4 py-2.5 text-[16px] font-medium text-ink"
                   >
                     <ModuleIcon name={tag.icon} className="size-5" strokeWidth={1.75} />
                     {tag.label}

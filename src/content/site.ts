@@ -64,6 +64,7 @@ export type Module = {
   description: string;
   tags: { icon: string; label: string }[];
   mockup: "students" | "grades" | "fees";
+  tone: "sky" | "lilac" | "mint";
 };
 
 export const MODULES: Module[] = [
@@ -79,6 +80,7 @@ export const MODULES: Module[] = [
       { icon: "timetable", label: "Emploi du temps" },
     ],
     mockup: "students",
+    tone: "sky",
   },
   {
     id: "pedagogie",
@@ -92,6 +94,7 @@ export const MODULES: Module[] = [
       { icon: "subjects", label: "Matieres" },
     ],
     mockup: "grades",
+    tone: "lilac",
   },
   {
     id: "administration",
@@ -105,6 +108,7 @@ export const MODULES: Module[] = [
       { icon: "suggestions", label: "Suggestions" },
     ],
     mockup: "fees",
+    tone: "mint",
   },
 ];
 
