@@ -17,8 +17,8 @@ const MOCKUPS = {
 
 export function Modules() {
   return (
-    <section id="modules" className="mx-auto max-w-[1240px] px-6">
-      <h2 className="font-display max-w-2xl text-[40px] leading-[1.08] text-ink md:text-[55px]">
+    <section id="modules" className="mx-auto max-w-[1240px] px-4 sm:px-6">
+      <h2 className="font-display max-w-2xl text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">
         Pilotez votre etablissement
         <br />
         avec clarte et serenite
@@ -29,10 +29,10 @@ export function Modules() {
           <article
             key={module.id}
             style={{ top: `${112 + i * 24}px` }}
-            className={`sticky grid min-h-[560px] gap-8 rounded-[40px] p-8 md:grid-cols-[1fr_1.1fr] md:p-12 ${TONES[module.tone]}`}
+            className={`sticky grid gap-8 rounded-3xl p-6 sm:rounded-[40px] sm:p-8 lg:min-h-[560px] lg:grid-cols-[1fr_1.1fr] lg:p-12 ${TONES[module.tone]}`}
           >
             <div className="flex flex-col">
-              <h3 className="font-display text-[34px] font-medium text-ink md:text-[40px]">{module.title}</h3>
+              <h3 className="font-display text-[30px] font-medium text-ink sm:text-[34px] md:text-[40px]">{module.title}</h3>
               <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-muted-foreground">{module.description}</p>
               <ul className="mt-8 flex flex-col items-start gap-2">
                 {module.tags.map((tag) => (
@@ -45,13 +45,13 @@ export function Modules() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto pt-10">
+              <div className="mt-auto pt-8">
                 <PillButton href={CTA.primary.href} variant="arrow" className="-ml-1">
                   {CTA.primary.label}
                 </PillButton>
               </div>
             </div>
-            <div className="relative hidden overflow-hidden rounded-3xl md:block">
+            <div className="relative hidden overflow-hidden rounded-3xl lg:block">
               <div className="absolute left-6 top-8 origin-top-left scale-[0.85] lg:scale-100">{MOCKUPS[module.mockup]}</div>
             </div>
           </article>

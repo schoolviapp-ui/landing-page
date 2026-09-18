@@ -12,7 +12,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 bg-stone-50/85 backdrop-blur-md">
-      <div className="mx-auto flex h-[88px] max-w-[1240px] items-center justify-between px-6">
+      <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between px-4 sm:px-6 lg:h-[88px]">
         <Logo />
 
         <nav className="hidden items-center gap-7 text-[15px] font-medium text-ink lg:flex">
@@ -52,7 +52,7 @@ export function SiteHeader() {
             ))}
           </nav>
           <div className="mt-6 flex flex-col gap-2">
-            <PillButton href={CTA.primary.href} variant="dark">
+            <PillButton href={CTA.primary.href} variant="brand">
               {CTA.primary.label}
             </PillButton>
             <PillButton href={CTA.login.href} variant="soft">

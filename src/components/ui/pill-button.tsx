@@ -8,6 +8,8 @@ type PillButtonProps = ComponentProps<"a"> & {
 };
 
 export function PillButton({ variant = "soft", className, children, ...props }: PillButtonProps) {
+  const external = typeof props.href === "string" && props.href.startsWith("http");
+  const linkProps = external ? { target: "_blank", rel: "noreferrer" } : {};
   if (variant === "arrow") {
     return (
       <a
@@ -15,6 +17,7 @@ export function PillButton({ variant = "soft", className, children, ...props }: 
           "group inline-flex items-center gap-2.5 rounded-full py-1 pl-1 pr-4 text-[15px] font-medium text-ink transition-colors hover:bg-stone-200",
           className,
         )}
+        {...linkProps}
         {...props}
       >
         <span className="grid size-9 place-items-center rounded-full bg-brand text-white transition-transform group-hover:translate-x-0.5">
@@ -32,6 +35,7 @@ export function PillButton({ variant = "soft", className, children, ...props }: 
           "group inline-flex items-center gap-3 rounded-full bg-ink py-1.5 pl-4 pr-1.5 text-[15px] font-medium text-white shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)] transition-transform hover:-translate-y-0.5",
           className,
         )}
+        {...linkProps}
         {...props}
       >
         {children}
@@ -51,6 +55,7 @@ export function PillButton({ variant = "soft", className, children, ...props }: 
         variant === "brand" && "bg-brand text-white hover:bg-[#1d4ed8]",
         className,
       )}
+      {...linkProps}
       {...props}
     >
       {children}

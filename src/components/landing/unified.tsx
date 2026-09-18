@@ -16,8 +16,8 @@ const RINGS = [
 
 export function Unified() {
   return (
-    <section className="mx-auto max-w-[1240px] px-6 pt-32">
-      <h2 className="font-display mx-auto max-w-2xl text-center text-[40px] leading-[1.08] text-ink md:text-[55px]">
+    <section className="mx-auto max-w-[1240px] px-6 pt-20 sm:pt-32">
+      <h2 className="font-display mx-auto max-w-2xl text-center text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">
         {UNIFIED.title[0]}
         <br />
         {UNIFIED.title[1]}
@@ -28,7 +28,7 @@ export function Unified() {
         </PillButton>
       </div>
 
-      <div className="relative mx-auto mt-16 aspect-[1100/520] w-full max-w-[1100px] overflow-hidden">
+      <div className="relative mx-auto mt-10 aspect-[1100/520] w-full max-w-[1100px] overflow-hidden sm:mt-16">
         {ARCS.map((arc) => (
           <span
             key={arc.f}
@@ -36,7 +36,7 @@ export function Unified() {
             className={`absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 rounded-full border border-stone-300 ${arc.className}`}
           />
         ))}
-        {RINGS.map((ring) =>
+        {RINGS.map((ring, ringIndex) =>
           ring.icons.map((name, i) => {
             const angle = Math.PI * ((i + 1) / (ring.icons.length + 1));
             const x = 50 + Math.cos(angle) * ring.f * 100;
@@ -45,7 +45,7 @@ export function Unified() {
               <span
                 key={name}
                 style={{ left: `${x}%`, top: `${y}%` }}
-                className="absolute grid size-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white text-ink shadow-[0_6px_16px_rgba(0,0,0,0.06)] md:size-[72px]"
+                className={`absolute size-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white text-ink shadow-[0_6px_16px_rgba(0,0,0,0.06)] md:size-[72px] ${ringIndex === 0 ? "hidden sm:grid" : "grid"}`}
               >
                 <ModuleIcon name={name} className="size-4 md:size-6" strokeWidth={1.75} />
               </span>

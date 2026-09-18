@@ -13,8 +13,8 @@ export function ProductPanel() {
   const Screen = SCREENS[active];
 
   return (
-    <section id="produit" className="mx-auto max-w-[1240px] px-6">
-      <div role="tablist" className="flex flex-wrap items-center justify-center gap-1 md:gap-6">
+    <section id="produit" className="mx-auto max-w-[1240px] px-4 sm:px-6">
+      <div role="tablist" className="-mx-4 flex items-center gap-1 overflow-x-auto px-4 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:justify-center sm:px-0 md:gap-6 [&::-webkit-scrollbar]:hidden">
         {MODULE_TABS.map((tab) => (
           <button
             key={tab.id}
@@ -23,7 +23,7 @@ export function ProductPanel() {
             aria-selected={tab.id === active}
             onClick={() => setActive(tab.id)}
             className={cn(
-              "flex items-center gap-2.5 rounded-full px-5 py-3 text-[16px] font-medium text-ink transition-colors",
+              "flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full px-4 py-2.5 text-[15px] font-medium text-ink transition-colors sm:gap-2.5 sm:px-5 sm:py-3 sm:text-[16px]",
               tab.id === active ? "bg-stone-200" : "hover:bg-stone-100",
             )}
           >
@@ -33,8 +33,8 @@ export function ProductPanel() {
         ))}
       </div>
 
-      <CloudPanel tone="lilac" className="mt-8 h-[420px] rounded-[40px] md:h-[640px]">
-        <div key={active} className="rise absolute left-6 top-14 w-[1100px] origin-top-left scale-[0.62] md:inset-x-16 md:top-24 md:w-auto md:scale-100">
+      <CloudPanel tone="lilac" className="mt-6 h-[240px] rounded-3xl sm:mt-8 sm:h-[420px] sm:rounded-[40px] md:h-[640px]">
+        <div key={active} className="rise absolute inset-x-4 top-6 sm:inset-x-8 sm:top-12 md:inset-x-16 md:top-24">
           <Screen />
         </div>
       </CloudPanel>

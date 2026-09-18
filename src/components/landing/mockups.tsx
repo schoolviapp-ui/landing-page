@@ -45,7 +45,7 @@ const STUDENTS = [
 
 export function AttendanceMockup({ className }: { className?: string }) {
   return (
-    <div className={cn("w-[300px] rounded-2xl bg-white p-4 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
+    <div className={cn("w-full max-w-[300px] rounded-2xl bg-white p-4 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
       <div className="flex items-center justify-between">
         <div>
           <p className="font-display text-[15px] font-medium">Appel - 6eme A</p>
@@ -82,7 +82,7 @@ export function AttendanceMockup({ className }: { className?: string }) {
 
 export function ParentMockup({ className }: { className?: string }) {
   return (
-    <div className={cn("w-[260px] rounded-[26px] border-[6px] border-ink bg-white p-4 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
+    <div className={cn("w-full max-w-[260px] rounded-[26px] border-[6px] border-ink bg-white p-4 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
       <p className="text-stone-500">Bonjour Mme Martin</p>
       <p className="font-display text-[17px] font-medium">Lea - 6eme A</p>
       <div className="mt-3 grid grid-cols-2 gap-2">
@@ -121,7 +121,7 @@ export function ParentMockup({ className }: { className?: string }) {
 
 export function MiniDashboardMockup({ className }: { className?: string }) {
   return (
-    <div className={cn("w-[340px] rounded-2xl bg-white p-4 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
+    <div className={cn("w-full max-w-[340px] rounded-2xl bg-white p-4 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
       <div className="flex items-center justify-between">
         <p className="font-display text-[15px] font-medium">Aujourd&apos;hui</p>
         <span className="rounded-full bg-stone-100 px-2 py-0.5 text-[10px]">College Demo</span>

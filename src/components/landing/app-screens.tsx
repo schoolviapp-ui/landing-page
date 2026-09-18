@@ -39,7 +39,7 @@ function Capture({ id, priority = false }: { id: ModuleTabId; priority?: boolean
       width={2000}
       height={height}
       priority={priority}
-      className="h-auto w-[1100px] rounded-[22px] md:w-full shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09),0_6px_6px_-2px_rgba(0,0,0,0.06)]"
+      className="h-auto w-full rounded-xl sm:rounded-[22px] shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09),0_6px_6px_-2px_rgba(0,0,0,0.06)]"
     />
   );
 }

@@ -4,16 +4,16 @@ import { FAQ } from "@/content/site";
 
 export function Faq() {
   return (
-    <section id="faq" className="mx-auto max-w-[1240px] px-6 pt-32">
+    <section id="faq" className="mx-auto max-w-[1240px] px-4 pt-20 sm:px-6 sm:pt-32">
       <div className="grid gap-10 md:grid-cols-[1fr_1.4fr]">
-        <h2 className="font-display text-[40px] leading-[1.08] text-ink md:text-[55px]">
+        <h2 className="font-display text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">
           Questions
           <br />
           frequentes
         </h2>
         <div className="space-y-3">
           {FAQ.map((item) => (
-            <details key={item.question} className="group rounded-3xl border border-stone-300 bg-white px-7 py-5 open:bg-stone-100">
+            <details key={item.question} className="group rounded-2xl border border-stone-300 bg-white px-5 py-4 open:bg-stone-100 sm:rounded-3xl sm:px-7 sm:py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-[17px] font-medium text-ink">
                 {item.question}
                 <PlusIcon className="size-5 shrink-0 transition-transform group-open:rotate-45" />

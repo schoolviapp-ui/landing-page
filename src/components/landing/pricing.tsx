@@ -14,21 +14,21 @@ export function Pricing() {
   const progress = ((students - PRICING.minStudents) / (PRICING.maxStudents - PRICING.minStudents)) * 100;
 
   return (
-    <section id="tarifs" className="mx-auto max-w-[1240px] px-6 pt-32">
+    <section id="tarifs" className="mx-auto max-w-[1240px] px-4 pt-20 sm:px-6 sm:pt-32">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="font-display text-[40px] leading-[1.08] text-ink md:text-[55px]">{PRICING.title}</h2>
+        <h2 className="font-display text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">{PRICING.title}</h2>
         <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground md:text-[19px]">{PRICING.description}</p>
       </div>
 
-      <div className="mx-auto mt-14 max-w-[920px] rounded-[32px] bg-stone-200 p-2.5">
-        <div className="grid rounded-[24px] bg-white md:grid-cols-[1.15fr_1fr]">
-          <div className="p-8 md:p-10">
-            <p className="flex items-baseline gap-2">
-              <span className="font-display text-[56px] leading-none text-brand md:text-[64px]">
+      <div className="mx-auto mt-10 max-w-[920px] rounded-3xl bg-stone-200 p-2 sm:mt-14 sm:rounded-[32px] sm:p-2.5">
+        <div className="grid rounded-[20px] bg-white sm:rounded-[24px] md:grid-cols-[1.15fr_1fr]">
+          <div className="p-6 sm:p-8 md:p-10">
+            <p className="flex flex-wrap items-baseline gap-x-2">
+              <span className="font-display text-[48px] leading-none text-brand sm:text-[56px] md:text-[64px]">
                 {fmt.format(PRICING.pricePerStudentPerYear)}
               </span>
               <span className="font-display text-[26px] text-brand">{PRICING.currency}</span>
-              <span className="text-[16px] text-muted-foreground">/ eleve / an</span>
+              <span className="whitespace-nowrap text-[16px] text-muted-foreground">/ eleve / an</span>
             </p>
             <p className="mt-2 text-[15px] text-muted-foreground">
               Enseignants et personnel illimites, tous les modules inclus.
@@ -66,7 +66,7 @@ export function Pricing() {
             <p className="mt-4 text-[13px] text-muted-foreground">{PRICING.note}</p>
           </div>
 
-          <div className="flex flex-col border-t border-stone-200 p-8 md:border-l md:border-t-0 md:p-10">
+          <div className="flex flex-col border-t border-stone-200 p-6 sm:p-8 md:border-l md:border-t-0 md:p-10">
             <p className="text-[15px] text-muted-foreground">Tout est inclus</p>
             <ul className="mt-5 space-y-3.5">
               {PRICING.included.map((item) => (
@@ -78,7 +78,7 @@ export function Pricing() {
                 </li>
               ))}
             </ul>
-            <PillButton href={CTA.primary.href} variant="brand" className="mt-auto h-14 w-full pt-0.5 text-[16px]">
+            <PillButton href={CTA.primary.href} variant="brand" className="mt-8 h-14 w-full pt-0.5 text-[16px] md:mt-auto">
               {PRICING.cta}
             </PillButton>
           </div>
