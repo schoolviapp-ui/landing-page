@@ -46,3 +46,7 @@ next-env.d.ts
 /out
 .wrangler
 .dev.vars
+
+# OpenNext (non utilise : export statique)
+/.open-next
+open-next.config.ts
