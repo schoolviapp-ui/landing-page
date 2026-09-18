@@ -12,7 +12,7 @@ Site vitrine public de Schoolvi (projet Next.js separe de l'application).
 
 ```bash
 npm install
-cp .env.example .env.local   # puis ajuster NEXT_PUBLIC_APP_URL si besoin
+cp .env.example .env.local   # NEXT_PUBLIC_APP_URL = URL de l'app (bouton Se connecter)
 npm run dev -- -p 3001       # http://localhost:3001 (3000 est pris par l'app)
 ```
 
@@ -32,7 +32,7 @@ comme assets par Cloudflare via `wrangler.jsonc` (Worker `landing-page`, sans co
 Parametres du projet Cloudflare (Workers & Pages > landing-page > Settings > Build) :
 - Build command : `npm run build`
 - Deploy command : `npx wrangler deploy`
-- Variables : `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_APP_URL`
+- Variable : `NEXT_PUBLIC_APP_URL` (URL de l'application, pour le bouton Se connecter)
 
 Le nom dans `wrangler.jsonc` doit rester identique au nom du projet Cloudflare.
 Si un jour la landing a besoin de code serveur (formulaire, API), passer a OpenNext
@@ -41,7 +41,7 @@ Si un jour la landing a besoin de code serveur (formulaire, API), passer a OpenN
 ## SEO
 
 - Metadonnees completes dans `src/app/layout.tsx` (title, description, keywords, canonical, Open Graph fr_TG,
-  Twitter, robots, geo Togo) ; `src/lib/site.ts` centralise l'URL du site.
+  Twitter, robots, geo Togo) ; `src/lib/site.ts` fixe le domaine https://schoolvi.co et l'email de contact.
 - `src/app/opengraph-image.tsx` et `src/app/icon.tsx` generent l'image de partage et le favicon au build.
 - `src/app/robots.ts` et `src/app/sitemap.ts` produisent `robots.txt` et `sitemap.xml`.
 - `src/components/landing/structured-data.tsx` : JSON-LD Organization, WebSite, SoftwareApplication
