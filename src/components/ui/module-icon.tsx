@@ -10,6 +10,7 @@ import {
   MessageSquareWarningIcon,
   NotebookPenIcon,
   PenLineIcon,
+  SparklesIcon,
   UsersIcon,
   WalletIcon,
   type LucideProps,
@@ -17,6 +18,7 @@ import {
 
 const ICONS = {
   dashboard: LayoutDashboardIcon,
+  assistant: SparklesIcon,
   students: GraduationCapIcon,
   classes: BookOpenIcon,
   attendance: ClipboardCheckIcon,

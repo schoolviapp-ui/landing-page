@@ -8,6 +8,8 @@ import {
   LayersIcon,
   NotebookPenIcon,
   SearchIcon,
+  SendIcon,
+  SparklesIcon,
   WalletIcon,
 } from "lucide-react";
 import Image from "next/image";
@@ -16,7 +18,10 @@ import type { ReactNode } from "react";
 import type { ModuleTabId } from "@/content/site";
 import { cn } from "@/lib/utils";
 
-const NAV: { id: ModuleTabId | "classes" | "attendance"; icon: typeof LayoutDashboardIcon }[] = [
+type NavId = ModuleTabId | "classes" | "attendance" | "exams";
+
+const NAV: { id: NavId; icon: typeof LayoutDashboardIcon }[] = [
+  { id: "assistant", icon: SparklesIcon },
   { id: "dashboard", icon: LayoutDashboardIcon },
   { id: "classes", icon: BookOpenIcon },
   { id: "students", icon: GraduationCapIcon },
@@ -33,7 +38,7 @@ export function AppFrame({
   action,
   children,
 }: {
-  active: ModuleTabId;
+  active: NavId;
   title: string;
   subtitle: string;
   action: string;
@@ -416,10 +421,87 @@ export function DashboardCapture() {
   );
 }
 
+export function AssistantScreen() {
+  return (
+    <AppFrame active="assistant" title="Assistant IA" subtitle="Repond avec les donnees de votre etablissement" action="Nouvelle conversation">
+      <div className="grid grid-cols-[1fr_260px] gap-3">
+        <Card className="flex min-h-[300px] flex-col p-4">
+          <div className="flex-1 space-y-3">
+            <div className="flex justify-end">
+              <p className="max-w-[70%] rounded-2xl rounded-br-md bg-brand px-3 py-2 text-white">
+                Quels eleves de 6eme A ont plus de 3 absences ce mois-ci ?
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <span className="grid size-7 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#93c5fd] to-brand text-white">
+                <SparklesIcon className="size-3.5" />
+              </span>
+              <div className="max-w-[80%] space-y-2 rounded-2xl rounded-tl-md bg-stone-100 px-3 py-2.5">
+                <p>3 eleves de 6eme A depassent 3 absences en septembre :</p>
+                <table className="w-full">
+                  <tbody>
+                    {[
+                      ["Awa Diallo", "5 absences", "2 justifiees"],
+                      ["Moussa Kone", "4 absences", "0 justifiee"],
+                      ["Fatou Sarr", "4 absences", "4 justifiees"],
+                    ].map((r) => (
+                      <tr key={r[0]} className="border-t border-stone-200">
+                        <td className="py-1 font-medium">{r[0]}</td>
+                        <td className="py-1 text-stone-500">{r[1]}</td>
+                        <td className="py-1 text-right text-stone-500">{r[2]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p>Souhaitez-vous que je prevenne les parents de Moussa Kone ?</p>
+                <div className="flex gap-1.5 pt-1">
+                  <span className="rounded-full bg-brand px-2.5 py-1 text-[10px] text-white">Envoyer un SMS aux parents</span>
+                  <span className="rounded-full border border-stone-300 bg-white px-2.5 py-1 text-[10px]">Voir le dossier</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 flex items-center gap-2 rounded-full border border-stone-300 bg-white py-1.5 pl-4 pr-1.5 text-stone-400">
+            <span className="flex-1">Posez une question sur vos eleves, vos classes, vos paiements...</span>
+            <span className="grid size-7 place-items-center rounded-full bg-brand text-white">
+              <SendIcon className="size-3.5" />
+            </span>
+          </div>
+        </Card>
+        <div className="space-y-3">
+          <Card>
+            <p className="font-semibold">Suggestions</p>
+            <ul className="mt-2 space-y-1.5">
+              {[
+                "Resume les reclamations en attente",
+                "Quels parents n'ont pas paye le trimestre 1 ?",
+                "Prepare le bulletin de Lea Martin",
+                "Y a-t-il des conflits dans l'emploi du temps ?",
+              ].map((q) => (
+                <li key={q} className="rounded-lg border border-stone-200 px-2.5 py-1.5 text-stone-600">
+                  {q}
+                </li>
+              ))}
+            </ul>
+          </Card>
+          <Card className="bg-brand-light/50">
+            <p className="font-semibold text-[#1e40af]">Ce que l&apos;assistant sait faire</p>
+            <ul className="mt-1.5 space-y-1 text-[10px] text-[#1e40af]">
+              <li>- Repondre a partir des donnees reelles de l&apos;ecole</li>
+              <li>- Rediger avis, convocations et rappels</li>
+              <li>- Preparer presences, notes et paiements</li>
+            </ul>
+          </Card>
+        </div>
+      </div>
+    </AppFrame>
+  );
+}
+
 export const SCREENS: Record<ModuleTabId, () => ReactNode> = {
   dashboard: DashboardCapture,
   students: StudentsScreen,
   fees: FeesScreen,
-  exams: ExamsScreen,
+  assistant: AssistantScreen,
   timetable: TimetableScreen,
 };

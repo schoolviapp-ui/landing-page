@@ -26,7 +26,7 @@ export const MODULE_TABS = [
   { id: "dashboard", label: "Tableau de bord" },
   { id: "students", label: "Eleves" },
   { id: "fees", label: "Frais de scolarite" },
-  { id: "exams", label: "Examens & bulletins" },
+  { id: "assistant", label: "Assistant IA" },
   { id: "timetable", label: "Emploi du temps" },
 ] as const;
 
