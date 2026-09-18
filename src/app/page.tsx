@@ -7,7 +7,6 @@ import { Pricing } from "@/components/landing/pricing";
 import { ProductPanel } from "@/components/landing/product-panel";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
-import { Testimonials } from "@/components/landing/testimonials";
 import { Unified } from "@/components/landing/unified";
 import { ValueProps } from "@/components/landing/value-props";
 
@@ -20,7 +19,6 @@ export default function HomePage() {
         <ProductPanel />
         <ValueProps />
         <Modules />
-        <Testimonials />
         <Unified />
         <Pricing />
         <Faq />
