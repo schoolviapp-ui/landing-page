@@ -10,7 +10,7 @@ export function SiteFooter() {
       <div className="rounded-3xl border border-stone-300 bg-white p-6 sm:rounded-[32px] sm:p-8 md:p-16">
         <div className="grid gap-12 md:grid-cols-[1fr_1.3fr]">
           <div className="flex flex-col gap-4">
-            <Logo className="text-[26px]" />
+            <Logo className="[&_img]:h-12 sm:[&_img]:h-14" />
             <p className="max-w-xs text-[15px] text-muted-foreground">{FOOTER.tagline}</p>
             <address className="text-[15px] not-italic text-muted-foreground">
               {FOOTER.location}

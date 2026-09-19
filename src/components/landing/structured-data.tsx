@@ -6,7 +6,7 @@ const organization = {
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/icon`,
+  logo: `${SITE_URL}/brand/logo.png`,
   email: CONTACT_EMAIL,
   areaServed: { "@type": "Country", name: "Togo" },
   address: { "@type": "PostalAddress", addressLocality: "Lome", addressCountry: "TG" },
