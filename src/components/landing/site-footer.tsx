@@ -44,7 +44,7 @@ export function SiteFooter() {
           </nav>
         </div>
         <p className="mt-10 text-[14px] text-ink sm:mt-16 sm:text-[15px]">
-          &copy; {new Date().getFullYear()} Schoolvi. Gestion scolaire multi-etablissements.
+          &copy; {new Date().getFullYear()} Schoolvi. Gestion scolaire multi-établissements.
         </p>
       </div>
     </footer>

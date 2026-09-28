@@ -36,11 +36,11 @@ function Sidebar() {
 }
 
 const STUDENTS = [
-  { name: "Lea Martin", cls: "6eme A", status: "present" },
-  { name: "Tom Bernard", cls: "5eme B", status: "present" },
-  { name: "Awa Diallo", cls: "6eme A", status: "absent" },
-  { name: "Kofi Mensah", cls: "4eme C", status: "present" },
-  { name: "Nadia Traore", cls: "3eme A", status: "late" },
+  { name: "Afi Agbeko", cls: "6ème A", status: "present" },
+  { name: "Kossi Adjovi", cls: "5ème B", status: "present" },
+  { name: "Akossiwa Mensah", cls: "6ème A", status: "absent" },
+  { name: "Kodjo Amegan", cls: "4ème C", status: "present" },
+  { name: "Essi Lawson", cls: "3ème A", status: "late" },
 ];
 
 export function AttendanceMockup({ className }: { className?: string }) {
@@ -48,8 +48,8 @@ export function AttendanceMockup({ className }: { className?: string }) {
     <div className={cn("w-full max-w-[300px] rounded-2xl bg-white p-4 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
       <div className="flex items-center justify-between">
         <div>
-          <p className="font-display text-[15px] font-medium">Appel - 6eme A</p>
-          <p className="text-stone-500">Mathematiques - 08:00</p>
+          <p className="font-display text-[15px] font-medium">Appel - 6ème A</p>
+          <p className="text-stone-500">Mathématiques - 08:00</p>
         </div>
         <span className="rounded-full bg-brand px-2 py-0.5 text-[10px] font-medium text-white">28 / 30</span>
       </div>
@@ -83,23 +83,23 @@ export function AttendanceMockup({ className }: { className?: string }) {
 export function ParentMockup({ className }: { className?: string }) {
   return (
     <div className={cn("w-full max-w-[260px] rounded-[26px] border-[6px] border-ink bg-white p-4 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
-      <p className="text-stone-500">Bonjour Mme Martin</p>
-      <p className="font-display text-[17px] font-medium">Lea - 6eme A</p>
+      <p className="text-stone-500">Bonjour Mme Agbeko</p>
+      <p className="font-display text-[17px] font-medium">Afi - 6ème A</p>
       <div className="mt-3 grid grid-cols-2 gap-2">
         <div className="rounded-xl bg-stone-100 p-2.5">
           <p className="text-stone-500">Moyenne</p>
           <p className="font-display text-[18px] font-medium">14,8</p>
         </div>
         <div className="rounded-xl bg-brand-light p-2.5">
-          <p className="text-stone-600">Presence</p>
+          <p className="text-stone-600">Présence</p>
           <p className="font-display text-[18px] font-medium">98 %</p>
         </div>
       </div>
-      <p className="mt-3 font-semibold">Dernieres notes</p>
+      <p className="mt-3 font-semibold">Dernières notes</p>
       <ul className="mt-1 space-y-1.5">
         {[
-          ["Mathematiques", "16 / 20"],
-          ["Francais", "13 / 20"],
+          ["Mathématiques", "16 / 20"],
+          ["Français", "13 / 20"],
           ["SVT", "15 / 20"],
         ].map(([s, n]) => (
           <li key={s} className="flex justify-between rounded-lg border border-stone-200 px-2.5 py-1.5">
@@ -109,7 +109,7 @@ export function ParentMockup({ className }: { className?: string }) {
         ))}
       </ul>
       <div className="mt-3 rounded-xl bg-stone-100 p-2.5">
-        <p className="text-[10px] text-stone-500">Frais de scolarite</p>
+        <p className="text-[10px] text-stone-500">Frais de scolarité</p>
         <div className="mt-1 h-1.5 rounded-full bg-stone-300">
           <div className="h-full w-2/3 rounded-full bg-ink" />
         </div>
@@ -124,11 +124,11 @@ export function MiniDashboardMockup({ className }: { className?: string }) {
     <div className={cn("w-full max-w-[340px] rounded-2xl bg-white p-4 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
       <div className="flex items-center justify-between">
         <p className="font-display text-[15px] font-medium">Aujourd&apos;hui</p>
-        <span className="rounded-full bg-stone-100 px-2 py-0.5 text-[10px]">College Demo</span>
+        <span className="rounded-full bg-stone-100 px-2 py-0.5 text-[10px]">Collège Demo</span>
       </div>
       <div className="mt-3 grid grid-cols-3 gap-2">
         {[
-          ["Eleves", "612"],
+          ["Élèves", "612"],
           ["Presents", "589"],
           ["Encaisse", "2,1 M"],
         ].map(([l, v]) => (
@@ -138,19 +138,19 @@ export function MiniDashboardMockup({ className }: { className?: string }) {
           </div>
         ))}
       </div>
-      <p className="mt-3 font-semibold">Reclamations en attente</p>
+      <p className="mt-3 font-semibold">Réclamations en attente</p>
       <ul className="mt-1 space-y-1.5">
         {[
-          ["Erreur de note en anglais", "Parent - 4eme C"],
-          ["Bus scolaire en retard", "Parent - 6eme A"],
-          ["Recu de paiement manquant", "Parent - 3eme B"],
+          ["Erreur de note en anglais", "Parent - 4ème C"],
+          ["Bulletin non reçu", "Parent - 6ème A"],
+          ["Reçu de paiement manquant", "Parent - 3ème B"],
         ].map(([t, s]) => (
           <li key={t} className="flex items-center justify-between rounded-lg border border-stone-200 px-2.5 py-1.5">
             <div>
               <p className="font-medium">{t}</p>
               <p className="text-[10px] text-stone-400">{s}</p>
             </div>
-            <span className="rounded-full bg-[#ffe9b8] px-2 py-0.5 text-[10px] text-[#8a5a00]">A traiter</span>
+            <span className="rounded-full bg-[#ffe9b8] px-2 py-0.5 text-[10px] text-[#8a5a00]">À traiter</span>
           </li>
         ))}
       </ul>
@@ -164,11 +164,11 @@ export function StudentsMockup({ className }: { className?: string }) {
       <Sidebar />
       <div className="min-w-0 flex-1 p-5">
         <div className="flex items-center justify-between">
-          <h4 className="font-display text-[20px] font-medium">Eleves</h4>
-          <span className="h-8 rounded-full bg-ink px-3 leading-8 text-white">+ Inscrire un eleve</span>
+          <h4 className="font-display text-[20px] font-medium">Élèves</h4>
+          <span className="h-8 rounded-full bg-ink px-3 leading-8 text-white">+ Inscrire un élève</span>
         </div>
         <div className="mt-3 flex gap-2">
-          {["Tous", "6eme", "5eme", "4eme", "3eme"].map((f, i) => (
+          {["Tous", "6ème", "5ème", "4ème", "3ème"].map((f, i) => (
             <span key={f} className={cn("rounded-full px-2.5 py-1", i === 0 ? "bg-stone-200 font-medium" : "text-stone-500")}>
               {f}
             </span>
@@ -180,17 +180,17 @@ export function StudentsMockup({ className }: { className?: string }) {
               <th className="px-3 py-2 font-medium">Matricule</th>
               <th className="py-2 font-medium">Nom</th>
               <th className="py-2 font-medium">Classe</th>
-              <th className="py-2 font-medium">Presence</th>
+              <th className="py-2 font-medium">Présence</th>
               <th className="py-2 pr-3 text-right font-medium">Frais</th>
             </tr>
           </thead>
           <tbody>
             {[
-              ["LD-2026-0142", "Lea Martin", "6eme A", "98 %", "Solde"],
-              ["LD-2026-0143", "Tom Bernard", "5eme B", "94 %", "Partiel"],
-              ["LD-2026-0144", "Awa Diallo", "6eme A", "91 %", "Solde"],
-              ["LD-2026-0145", "Kofi Mensah", "4eme C", "97 %", "En retard"],
-              ["LD-2026-0146", "Nadia Traore", "3eme A", "99 %", "Solde"],
+              ["LD-2026-0142", "Afi Agbeko", "6ème A", "98 %", "Soldé"],
+              ["LD-2026-0143", "Kossi Adjovi", "5ème B", "94 %", "Partiel"],
+              ["LD-2026-0144", "Akossiwa Mensah", "6ème A", "91 %", "Soldé"],
+              ["LD-2026-0145", "Kodjo Amegan", "4ème C", "97 %", "En retard"],
+              ["LD-2026-0146", "Essi Lawson", "3ème A", "99 %", "Soldé"],
             ].map((r) => (
               <tr key={r[0]} className="border-t border-stone-200">
                 <td className="px-3 py-2 text-stone-400">{r[0]}</td>
@@ -198,7 +198,7 @@ export function StudentsMockup({ className }: { className?: string }) {
                 <td className="py-2">{r[2]}</td>
                 <td className="py-2">{r[3]}</td>
                 <td className="py-2 pr-3 text-right">
-                  <span className={cn("rounded-full px-2 py-0.5 text-[10px]", r[4] === "Solde" ? "bg-brand-light text-[#1e40af]" : r[4] === "Partiel" ? "bg-[#ffe9b8] text-[#8a5a00]" : "bg-[#ffd6d6] text-[#a12b2b]")}>
+                  <span className={cn("rounded-full px-2 py-0.5 text-[10px]", r[4] === "Soldé" ? "bg-brand-light text-[#1e40af]" : r[4] === "Partiel" ? "bg-[#ffe9b8] text-[#8a5a00]" : "bg-[#ffd6d6] text-[#a12b2b]")}>
                     {r[4]}
                   </span>
                 </td>
@@ -212,26 +212,26 @@ export function StudentsMockup({ className }: { className?: string }) {
 }
 
 export function GradesMockup({ className }: { className?: string }) {
-  const subjects = ["Maths", "Francais", "Anglais", "SVT"];
+  const subjects = ["Maths", "Français", "Anglais", "SVT"];
   const rows = [
-    ["Lea Martin", 16, 13, 15, 14],
-    ["Tom Bernard", 11, 14, 12, 13],
-    ["Awa Diallo", 18, 15, 17, 16],
-    ["Kofi Mensah", 9, 12, 10, 11],
+    ["Afi Agbeko", 16, 13, 15, 14],
+    ["Kossi Adjovi", 11, 14, 12, 13],
+    ["Akossiwa Mensah", 18, 15, 17, 16],
+    ["Kodjo Amegan", 9, 12, 10, 11],
   ];
   return (
     <div className={cn("overflow-hidden rounded-[20px] bg-white p-5 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
       <div className="flex items-center justify-between">
         <div>
           <h4 className="font-display text-[20px] font-medium">Saisie des notes</h4>
-          <p className="text-stone-500">Trimestre 1 - 6eme A - Coefficients appliques</p>
+          <p className="text-stone-500">Trimestre 1 - 6ème A - Coefficients appliqués</p>
         </div>
-        <span className="h-8 rounded-full bg-brand px-3 leading-8 font-medium text-white">Generer les bulletins</span>
+        <span className="h-8 rounded-full bg-brand px-3 leading-8 font-medium text-white">Générer les bulletins</span>
       </div>
       <table className="mt-4 w-full">
         <thead>
           <tr className="text-left text-[10px] text-stone-400">
-            <th className="py-2 font-medium">Eleve</th>
+            <th className="py-2 font-medium">Élève</th>
             {subjects.map((s, i) => (
               <th key={s} className="py-2 font-medium">
                 {s} <span className="text-stone-300">x{[4, 3, 2, 2][i]}</span>
@@ -270,7 +270,7 @@ export function FeesMockup({ className }: { className?: string }) {
     <div className={cn("w-[360px] rounded-[20px] bg-white p-5 font-sans text-[11px] text-ink shadow-[0_20px_18px_-3px_rgba(0,0,0,0.09)]", className)}>
       <div className="flex items-start justify-between">
         <div>
-          <h4 className="font-display text-[20px] font-medium">Recu de paiement</h4>
+          <h4 className="font-display text-[20px] font-medium">Reçu de paiement</h4>
           <p className="text-stone-500">N. RC-2026-00412</p>
         </div>
         <span className="grid size-7 place-items-center rounded-md bg-brand text-white">
@@ -279,8 +279,8 @@ export function FeesMockup({ className }: { className?: string }) {
       </div>
       <div className="mt-4 grid grid-cols-2 gap-3 rounded-xl border border-stone-200 p-3">
         <div>
-          <p className="text-[10px] text-stone-400">Eleve</p>
-          <p className="font-medium">Lea Martin - 6eme A</p>
+          <p className="text-[10px] text-stone-400">Élève</p>
+          <p className="font-medium">Afi Agbeko - 6ème A</p>
         </div>
         <div>
           <p className="text-[10px] text-stone-400">Date</p>
@@ -290,15 +290,15 @@ export function FeesMockup({ className }: { className?: string }) {
       <table className="mt-3 w-full">
         <thead>
           <tr className="bg-brand-light text-left text-[10px]">
-            <th className="rounded-l-md px-2 py-1.5 font-medium">Libelle</th>
+            <th className="rounded-l-md px-2 py-1.5 font-medium">Libellé</th>
             <th className="py-1.5 text-right font-medium">Montant</th>
             <th className="rounded-r-md px-2 py-1.5 text-right font-medium">Reste</th>
           </tr>
         </thead>
         <tbody>
           {[
-            ["Scolarite T1", "60 000", "0"],
-            ["Scolarite T2", "60 000", "0"],
+            ["Scolarité T1", "60 000", "0"],
+            ["Scolarité T2", "60 000", "0"],
             ["Cantine", "15 000", "5 000"],
           ].map((r) => (
             <tr key={r[0]} className="border-b border-stone-200">

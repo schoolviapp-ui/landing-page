@@ -9,7 +9,7 @@ export function Faq() {
         <h2 className="font-display text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">
           Questions
           <br />
-          frequentes
+          fréquentes
         </h2>
         <div className="space-y-3">
           {FAQ.map((item) => (

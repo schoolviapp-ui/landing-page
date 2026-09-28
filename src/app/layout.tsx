@@ -17,7 +17,7 @@ const urbanist = Urbanist({
 
 const TITLE = "Schoolvi - Logiciel de gestion scolaire au Togo";
 const DESCRIPTION =
-  "Schoolvi est le logiciel de gestion scolaire pense pour les ecoles, colleges et lycees du Togo : eleves, presences, notes, bulletins, emploi du temps et frais de scolarite en FCFA. 1 000 FCFA par eleve et par an, enseignants illimites.";
+  "Schoolvi aide les écoles, collèges et lycées du Togo à récupérer leurs frais de scolarité, à prévenir les parents dès la première absence et à produire les bulletins sans recopier les notes, avec un assistant IA. Gratuit et illimité pour l'établissement ; 1 000 FCFA par élève et par an payés par les parents.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

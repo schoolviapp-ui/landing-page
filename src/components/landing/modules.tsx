@@ -19,9 +19,9 @@ export function Modules() {
   return (
     <section id="modules" className="mx-auto max-w-[1240px] scroll-mt-24 px-4 sm:px-6">
       <h2 className="font-display max-w-2xl text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">
-        Pilotez votre etablissement
+        Tout ce qui vous épuise,
         <br />
-        avec clarte et serenite
+        Schoolvi le fait pour vous
       </h2>
 
       <div className="mt-12 space-y-4">

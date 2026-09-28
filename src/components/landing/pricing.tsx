@@ -10,7 +10,7 @@ const fmt = new Intl.NumberFormat("fr-FR");
 
 export function Pricing() {
   const [students, setStudents] = useState(PRICING.defaultStudents);
-  const yearly = students * PRICING.pricePerStudentPerYear;
+  const families = students * PRICING.pricePerStudentPerYear;
   const progress = ((students - PRICING.minStudents) / (PRICING.maxStudents - PRICING.minStudents)) * 100;
 
   return (
@@ -24,20 +24,18 @@ export function Pricing() {
         <div className="grid rounded-[20px] bg-white sm:rounded-[24px] md:grid-cols-[1.15fr_1fr]">
           <div className="p-6 sm:p-8 md:p-10">
             <p className="flex flex-wrap items-baseline gap-x-2">
-              <span className="font-display text-[48px] leading-none text-brand sm:text-[56px] md:text-[64px]">
-                {fmt.format(PRICING.pricePerStudentPerYear)}
-              </span>
+              <span className="font-display text-[48px] leading-none text-brand sm:text-[56px] md:text-[64px]">0</span>
               <span className="font-display text-[26px] text-brand">{PRICING.currency}</span>
-              <span className="whitespace-nowrap text-[16px] text-muted-foreground">/ eleve / an</span>
+              <span className="whitespace-nowrap text-[16px] text-muted-foreground">pour l&apos;établissement</span>
             </p>
             <p className="mt-2 text-[15px] text-muted-foreground">
-              Enseignants et personnel illimites, tous les modules inclus.
+              Élèves, enseignants, personnel et modules illimités. Les parents versent {fmt.format(PRICING.pricePerStudentPerYear)} {PRICING.currency} par élève et par an.
             </p>
-            <p className="font-display mt-8 text-[22px] text-ink">Estimez votre abonnement</p>
+            <p className="font-display mt-8 text-[22px] text-ink">Faites le calcul pour votre école</p>
 
             <div className="mt-4">
               <label htmlFor="students" className="flex items-baseline justify-between">
-                <span className="text-[15px] text-muted-foreground">Nombre d&apos;eleves</span>
+                <span className="text-[15px] text-muted-foreground">Nombre d&apos;élèves</span>
                 <span className="font-display text-[40px] leading-none text-ink">{fmt.format(students)}</span>
               </label>
               <input
@@ -57,11 +55,19 @@ export function Pricing() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-2xl bg-stone-100 p-5">
-              <p className="text-[13px] text-muted-foreground">Abonnement annuel</p>
-              <p className="font-display mt-1 text-[34px] leading-none text-ink">
-                {fmt.format(yearly)} <span className="text-[15px] text-muted-foreground">{PRICING.currency} / an</span>
-              </p>
+            <div className="mt-8 grid gap-2">
+              <div className="rounded-2xl bg-brand-light p-5">
+                <p className="text-[13px] text-muted-foreground">Coût pour votre école</p>
+                <p className="font-display mt-1 whitespace-nowrap text-[30px] leading-none text-brand">
+                  0 <span className="text-[14px] text-muted-foreground">{PRICING.currency}/an</span>
+                </p>
+              </div>
+              <div className="rounded-2xl bg-stone-100 p-5">
+                <p className="text-[13px] text-muted-foreground">Payé par les parents</p>
+                <p className="font-display mt-1 whitespace-nowrap text-[30px] leading-none text-ink">
+                  {fmt.format(families)} <span className="text-[14px] text-muted-foreground">{PRICING.currency}/an</span>
+                </p>
+              </div>
             </div>
             <p className="mt-4 text-[13px] text-muted-foreground">{PRICING.note}</p>
           </div>

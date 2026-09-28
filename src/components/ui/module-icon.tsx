@@ -1,4 +1,5 @@
 import {
+  BellRingIcon,
   BookOpenIcon,
   CalendarClockIcon,
   ClipboardCheckIcon,
@@ -7,6 +8,7 @@ import {
   IdCardIcon,
   LayoutDashboardIcon,
   LightbulbIcon,
+  MessageCircleIcon,
   MessageSquareWarningIcon,
   NotebookPenIcon,
   PenLineIcon,
@@ -32,6 +34,8 @@ const ICONS = {
   teachers: UsersIcon,
   complaints: MessageSquareWarningIcon,
   suggestions: LightbulbIcon,
+  whatsapp: MessageCircleIcon,
+  reminders: BellRingIcon,
 };
 
 export type ModuleIconName = keyof typeof ICONS;

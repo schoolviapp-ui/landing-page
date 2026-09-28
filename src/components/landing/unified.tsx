@@ -10,18 +10,19 @@ const ARCS = [
   { f: 0.23, className: "bg-stone-200" },
 ];
 const RINGS = [
-  { f: 0.45, icons: ["timetable", "fees", "staff", "complaints", "suggestions"] },
+  { f: 0.45, icons: ["timetable", "fees", "whatsapp", "reports", "staff"] },
   { f: 0.34, icons: ["students", "attendance", "grades"] },
 ];
 
 export function Unified() {
   return (
-    <section className="mx-auto max-w-[1240px] px-6 pt-20 sm:pt-32">
+    <section id="assistant" className="mx-auto max-w-[1240px] scroll-mt-24 px-6 pt-20 sm:pt-32">
       <h2 className="font-display mx-auto max-w-2xl text-center text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">
         {UNIFIED.title[0]}
         <br />
         {UNIFIED.title[1]}
       </h2>
+      <p className="mx-auto mt-5 max-w-2xl text-center text-[17px] leading-relaxed text-muted-foreground md:text-[19px]">{UNIFIED.description}</p>
       <div className="mt-8 flex justify-center">
         <PillButton href={CTA.primary.href} variant="arrow">
           {CTA.primary.label}

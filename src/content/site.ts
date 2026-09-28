@@ -1,4 +1,4 @@
-export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+export const APP_URL = "https://app.schoolvi.co";
 
 export const NAV_LINKS = [
   { label: "Produit", href: "/#produit" },
@@ -11,23 +11,23 @@ export const NAV_LINKS = [
 export const DEMO_URL = "https://calendly.com/schoolvi-app/30min";
 
 export const CTA = {
-  primary: { label: "Demander une demo", href: DEMO_URL },
+  primary: { label: "Demander une démo", href: DEMO_URL },
   login: { label: "Se connecter", href: `${APP_URL}/login` },
   contact: { label: "Nous contacter", href: "mailto:contact@schoolvi.co" },
 };
 
 export const HERO = {
-  title: ["Gerer votre ecole", "redevient un plaisir"],
+  title: ["Moins d'impayés,", "plus d'élèves qui réussissent"],
   description: [
-    "Le logiciel de gestion scolaire tout-en-un pour les ecoles, colleges et lycees du Togo :",
-    "eleves, presences, notes, emploi du temps et frais de scolarite en FCFA.",
+    "Relances des familles sur WhatsApp, parents prévenus dès la première absence, bulletins calculés sans recopier une seule note, et un assistant IA qui répond à vos questions.",
+    "Schoolvi, le logiciel des écoles, collèges et lycées du Togo.",
   ],
 };
 
 export const MODULE_TABS = [
   { id: "dashboard", label: "Tableau de bord" },
-  { id: "students", label: "Eleves" },
-  { id: "fees", label: "Frais de scolarite" },
+  { id: "students", label: "Élèves" },
+  { id: "fees", label: "Frais de scolarité" },
   { id: "assistant", label: "Assistant IA" },
   { id: "timetable", label: "Emploi du temps" },
 ] as const;
@@ -36,29 +36,30 @@ export type ModuleTabId = (typeof MODULE_TABS)[number]["id"];
 
 export const VALUE_PROPS = [
   {
-    title: "Gagnez du temps",
+    title: "Libérez vos enseignants",
     description:
-      "Appel, notes et encaissements se font en quelques clics. Fini les cahiers et les fichiers Excel disperses.",
+      "Fini les fiches de notes à remplir, les moyennes calculées à la main et les nuits blanches de fin de trimestre. L'enseignant fait l'appel et saisit ses notes depuis son téléphone : Schoolvi calcule moyennes, rangs et bulletins.",
     tone: "sky",
     mockup: "attendance",
   },
   {
-    title: "Impliquez les familles",
+    title: "Des parents prévenus à temps",
     description:
-      "Les parents suivent les notes et les presences de leurs enfants et remontent leurs demandes directement.",
+      "Trop de parents découvrent les absences et les mauvaises notes sur le bulletin, quand il est déjà tard. Avec Schoolvi, ils sont prévenus sur WhatsApp dès la première absence et suivent leur enfant tout au long du trimestre.",
     tone: "lilac",
     mockup: "parent",
   },
   {
-    title: "Gardez le controle",
+    title: "Récupérez ce qu'on vous doit",
     description:
-      "Effectifs, presences du jour, fonds collectes et reclamations en attente : tout est sur votre tableau de bord.",
+      "Qui a payé, qui est en retard, combien reste à encaisser : vous le voyez en un coup d'œil. Schoolvi relance les familles sur WhatsApp à votre place, envoie les reçus et suit chaque échéance, sans abîmer la relation avec les parents.",
     tone: "brand",
     mockup: "dashboard",
   },
 ] as const;
 
-export const SOCIAL_PROOF = "Pense pour les ecoles, colleges, lycees et universites du Togo";
+export const SOCIAL_PROOF =
+  "Pensé pour la réalité des écoles du Togo : paiements en espèces, T-Money ou Flooz, parents joignables sur WhatsApp, classes chargées.";
 
 export type Module = {
   id: string;
@@ -72,13 +73,13 @@ export type Module = {
 export const MODULES: Module[] = [
   {
     id: "vie-scolaire",
-    title: "Vie scolaire",
+    title: "Élèves et familles, main dans la main",
     description:
-      "Des dossiers eleves complets, des classes organisees par niveau et par filiere, un appel quotidien qui alimente directement le tableau de bord.",
+      "Un élève ne décroche pas du jour au lendemain. Schoolvi repère les absences qui se répètent, prévient les parents à chaque appel et leur répond sur WhatsApp : l'école et la famille agissent ensemble, avant l'échec scolaire.",
     tags: [
-      { icon: "students", label: "Eleves" },
-      { icon: "classes", label: "Classes" },
-      { icon: "attendance", label: "Presences" },
+      { icon: "students", label: "Dossiers élèves" },
+      { icon: "attendance", label: "Appel par cours" },
+      { icon: "whatsapp", label: "Parents sur WhatsApp" },
       { icon: "timetable", label: "Emploi du temps" },
     ],
     mockup: "students",
@@ -86,28 +87,28 @@ export const MODULES: Module[] = [
   },
   {
     id: "pedagogie",
-    title: "Pedagogie",
+    title: "Des bulletins sans corvée",
     description:
-      "Planifiez les sessions d'examen, saisissez les notes matiere par matiere avec leurs coefficients, et generez les bulletins de periode.",
+      "Plus de fiches de notes à remplir, de moyennes à recalculer ni de bulletins à recopier. Chaque enseignant saisit ses notes une seule fois : coefficients, moyennes, rangs et bulletins sont prêts dès la fin du trimestre, sans erreur de calcul.",
     tags: [
       { icon: "exams", label: "Examens" },
-      { icon: "grades", label: "Notes" },
-      { icon: "reports", label: "Bulletins" },
-      { icon: "subjects", label: "Matieres" },
+      { icon: "grades", label: "Saisie des notes" },
+      { icon: "reports", label: "Bulletins automatiques" },
+      { icon: "subjects", label: "Coefficients" },
     ],
     mockup: "grades",
     tone: "lilac",
   },
   {
     id: "administration",
-    title: "Administration & finances",
+    title: "Frais scolaires encaissés, trésorerie sereine",
     description:
-      "Encaissez au guichet, suivez les paiements de chaque eleve et visualisez les fonds collectes. Les reclamations et suggestions des familles arrivent au meme endroit.",
+      "Les impayés menacent les salaires et la vie de l'école. Schoolvi suit chaque échéance, relance les familles en retard sur WhatsApp, délivre les reçus et vous montre à tout moment ce qu'il y a en caisse, en banque et sur mobile money.",
     tags: [
-      { icon: "fees", label: "Frais de scolarite" },
-      { icon: "staff", label: "Personnel" },
-      { icon: "complaints", label: "Reclamations" },
-      { icon: "suggestions", label: "Suggestions" },
+      { icon: "fees", label: "Frais de scolarité" },
+      { icon: "reminders", label: "Relances automatiques" },
+      { icon: "reports", label: "Reçus" },
+      { icon: "staff", label: "Paie du personnel" },
     ],
     mockup: "fees",
     tone: "mint",
@@ -149,13 +150,15 @@ export const TESTIMONIALS = [
 ] as const;
 
 export const UNIFIED = {
-  title: ["Tout votre etablissement", "au meme endroit"],
+  title: ["Demandez,", "l'assistant IA s'en charge"],
+  description:
+    "« Qui n'a pas encore payé en 6ème A ? », « Relance les parents en retard », « Prépare le bulletin de Kofi » : écrivez ou dictez votre demande. L'assistant de Schoolvi cherche, prépare, et vous fait valider avant d'agir.",
 };
 
 export const PRICING = {
-  title: "Un tarif simple, sans surprise",
+  title: "Gratuit pour votre établissement",
   description:
-    "Vous payez uniquement pour vos eleves, en FCFA. Enseignants, personnel et modules sont inclus, sans limite.",
+    "Schoolvi ne coûte rien à l'école, sans limite d'élèves, d'enseignants ni de modules. Seule une contribution de 1 000 FCFA par élève et par an est payée par les parents.",
   pricePerStudentPerYear: 1000,
   currency: "FCFA",
   minStudents: 50,
@@ -163,67 +166,89 @@ export const PRICING = {
   defaultStudents: 400,
   step: 10,
   included: [
-    "Enseignants illimites",
-    "Personnel administratif illimite",
+    "Gratuit pour l'établissement, sans limite",
+    "Enseignants illimités",
+    "Personnel administratif illimité",
     "Tous les modules inclus",
-    "Plusieurs etablissements sur un seul compte",
-    "Espace parents et eleves",
+    "Plusieurs établissements sur un seul compte",
+    "Espace parents et élèves",
     "Assistance par email et WhatsApp",
   ],
-  note: "Paiement par virement ou en especes, sans carte bancaire. Aucun frais d'installation.",
-  cta: "Demander une demo",
+  note: "Aucun abonnement ni frais d'installation pour l'établissement. Les parents versent 1 000 FCFA par élève et par an, soit moins de 3 FCFA par jour.",
+  cta: "Demander une démo",
 };
 
 export const FAQ = [
   {
-    question: "Schoolvi est-il adapte aux ecoles du Togo ?",
+    question: "Comment Schoolvi m'aide-t-il à récupérer les impayés ?",
     answer:
-      "Oui. Schoolvi est pense pour les etablissements togolais : facturation en FCFA, paiement par virement ou en especes, assistance par WhatsApp et une interface en francais utilisable depuis un ordinateur ou un telephone, a Lome comme dans les autres regions.",
+      "Chaque élève a ses échéances. Schoolvi vous montre qui est en retard et de combien, relance les familles sur WhatsApp avec le montant exact, envoie un reçu à chaque paiement et tient votre trésorerie à jour (espèces, banque, T-Money, Flooz). Vous gardez la main : c'est vous qui choisissez quand relancer.",
   },
   {
-    question: "Combien coute Schoolvi ?",
+    question: "Mes enseignants doivent-ils encore remplir des fiches de notes ?",
     answer:
-      "1000 FCFA par eleve et par an. Les enseignants et le personnel administratif sont illimites, quel que soit le nombre d'etablissements.",
+      "Non. Chaque enseignant saisit ses notes une seule fois, depuis un ordinateur ou son téléphone. Les moyennes, les rangs et les bulletins se calculent tout seuls, avec les coefficients de chaque matière. Fini les relevés recopiés et les erreurs de calcul en fin de trimestre.",
   },
   {
-    question: "Schoolvi convient-il a plusieurs etablissements ?",
+    question: "Comment les parents sont-ils tenus informés ?",
     answer:
-      "Oui. Un fondateur gere plusieurs ecoles depuis un seul compte, chaque etablissement restant totalement isole des autres.",
+      "Sur WhatsApp, l'application qu'ils utilisent déjà. Ils sont prévenus dès qu'une absence est notée, reçoivent les rappels d'échéance et les avis de l'école, et peuvent écrire à l'école, qui leur répond depuis Schoolvi. Pas d'application à installer.",
   },
   {
-    question: "Les donnees de mon ecole sont-elles protegees ?",
+    question: "Que fait l'assistant IA ?",
     answer:
-      "Chaque etablissement est un espace independant. L'isolation est appliquee au niveau de la base de donnees, pas seulement dans l'interface.",
+      "Vous lui posez vos questions en français, à l'écrit ou à la voix : « Quels élèves sont en difficulté en maths ? », « Combien a-t-on encaissé ce mois-ci ? ». Il répond avec les chiffres de votre école, prépare les listes et les documents, et peut lancer une action (relance, encaissement, avis) après votre validation.",
+  },
+  {
+    question: "Schoolvi est-il adapté aux écoles du Togo ?",
+    answer:
+      "Oui. Schoolvi est pensé pour les établissements togolais : facturation en FCFA, paiement par virement ou en espèces, assistance par WhatsApp et une interface en français utilisable depuis un ordinateur ou un téléphone, à Lomé comme dans les autres régions.",
+  },
+  {
+    question: "Combien coûte Schoolvi ?",
+    answer:
+      "Rien pour l'établissement : Schoolvi est gratuit et illimité pour l'école (élèves, enseignants, personnel, modules, plusieurs établissements). Les parents versent 1 000 FCFA par élève et par an, soit moins de 3 FCFA par jour.",
+  },
+  {
+    question: "Schoolvi convient-il à plusieurs établissements ?",
+    answer:
+      "Oui. Un fondateur gère plusieurs écoles depuis un seul compte, chaque établissement restant totalement isolé des autres.",
+  },
+  {
+    question: "Les données de mon école sont-elles protégées ?",
+    answer:
+      "Chaque établissement est un espace indépendant. L'isolation est appliquée au niveau de la base de données, pas seulement dans l'interface.",
   },
   {
     question: "Comment se passe le paiement ?",
     answer:
-      "Par virement ou en especes, sans carte bancaire. Vous recevez une facture annuelle calculee sur votre effectif reel.",
+      "L'établissement ne paie rien. La contribution de 1 000 FCFA par élève et par an est payée par les parents ; nous convenons avec vous de la façon de la collecter lors de la mise en place.",
   },
   {
-    question: "Faut-il un compte pour chaque eleve ?",
+    question: "Faut-il un compte pour chaque élève ?",
     answer:
-      "Non. Un eleve peut exister dans Schoolvi sans acces de connexion, ce qui est frequent pour les plus jeunes. Les parents peuvent suivre plusieurs enfants depuis un seul compte.",
+      "Non. Un élève peut exister dans Schoolvi sans accès de connexion, ce qui est fréquent pour les plus jeunes. Les parents peuvent suivre plusieurs enfants depuis un seul compte.",
   },
 ] as const;
 
 export const FINAL_CTA = {
-  title: "Simplifiez votre rentree",
-  description: "Passez a Schoolvi et concentrez-vous sur ce qui compte : vos eleves.",
-  cta: "Demander une demo",
+  title: "Ce trimestre, respirez",
+  description:
+    "Moins d'impayés, des parents impliqués, des enseignants libérés de la paperasse. En 30 minutes, voyons ensemble ce que Schoolvi change pour votre école.",
+  cta: "Demander une démo",
 };
 
 export const FOOTER = {
-  tagline: "Logiciel de gestion scolaire pour les ecoles, colleges et lycees du Togo.",
-  location: "Lome, Togo",
+  tagline: "Logiciel de gestion scolaire pour les écoles, collèges et lycées du Togo.",
+  location: "Lomé, Togo",
   columns: [
     {
       title: "Produit",
       links: [
-        { label: "Eleves & classes", href: "/#modules" },
-        { label: "Presences", href: "/#modules" },
+        { label: "Élèves & classes", href: "/#modules" },
+        { label: "Présences", href: "/#modules" },
         { label: "Examens & bulletins", href: "/#modules" },
-        { label: "Frais de scolarite", href: "/#modules" },
+        { label: "Frais de scolarité", href: "/#modules" },
         { label: "Emploi du temps", href: "/#modules" },
       ],
     },
@@ -237,10 +262,10 @@ export const FOOTER = {
       ],
     },
     {
-      title: "Legal",
+      title: "Légal",
       links: [
-        { label: "Conditions generales d'utilisation", href: "/cgu" },
-        { label: "Politique de confidentialite", href: "/confidentialite" },
+        { label: "Conditions générales d'utilisation", href: "/cgu" },
+        { label: "Politique de confidentialité", href: "/confidentialite" },
       ],
     },
   ],

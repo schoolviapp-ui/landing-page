@@ -31,10 +31,10 @@ export default async function OpenGraphImage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div style={{ fontSize: 76, lineHeight: 1.05, letterSpacing: -2 }}>
-            Gerer votre ecole redevient un plaisir
+            Moins d’impayés, plus d’élèves qui réussissent
           </div>
           <div style={{ fontSize: 30, color: "#535353" }}>
-            Logiciel de gestion scolaire pour les ecoles, colleges et lycees du Togo
+            Le logiciel de gestion des écoles, collèges et lycées du Togo
           </div>
         </div>
 
@@ -51,9 +51,9 @@ export default async function OpenGraphImage() {
               fontWeight: 600,
             }}
           >
-            1 000 FCFA / eleve / an
+            Gratuit pour l’établissement
           </div>
-          <span style={{ fontSize: 26, color: "#535353" }}>Enseignants et personnel illimites</span>
+          <span style={{ fontSize: 26, color: "#535353" }}>1 000 FCFA / élève / an payés par les parents</span>
         </div>
       </div>
     ),

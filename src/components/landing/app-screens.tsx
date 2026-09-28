@@ -8,20 +8,20 @@ type CaptureMeta = { src: string; alt: string; height?: number };
 const CAPTURES: Record<ModuleTabId, CaptureMeta> = {
   dashboard: {
     src: "/screens/dashboard.webp",
-    alt: "Tableau de bord Schoolvi : indicateurs eleves, enseignants, classes, reclamations et fonds collectes",
+    alt: "Tableau de bord Schoolvi : indicateurs élèves, enseignants, classes, réclamations et fonds collectés",
   },
   students: {
     src: "/screens/students.webp",
-    alt: "Profil d'un eleve dans Schoolvi : moyenne du trimestre, rang, evolution et bulletin par matiere",
+    alt: "Profil d'un élève dans Schoolvi : moyenne du trimestre, rang, évolution et bulletin par matière",
   },
   fees: {
     src: "/screens/fees.webp",
-    alt: "Caisse et recouvrement dans Schoolvi : total recouvre, reste a recouvrer, situation des eleves et encaissement",
+    alt: "Caisse et recouvrement dans Schoolvi : total recouvré, reste à recouvrer, situation des élèves et encaissement",
     height: 1142,
   },
   assistant: {
     src: "/screens/assistant.webp",
-    alt: "Assistant IA de Schoolvi : posez une question, il repond avec les donnees de l'etablissement",
+    alt: "Assistant IA de Schoolvi : posez une question, il répond avec les données de l'établissement",
     height: 1142,
   },
   timetable: {
