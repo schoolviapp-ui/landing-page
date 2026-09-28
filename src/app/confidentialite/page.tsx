@@ -33,7 +33,7 @@ export default function PrivacyPage() {
       </p>
       <p>
         Pour les donnees des eleves, des parents et du personnel saisies dans le Service, chaque
-        <strong> etablissement scolaire</strong> abonne est responsable du traitement de ses propres donnees ;
+        <strong> etablissement scolaire</strong> utilisateur est responsable du traitement de ses propres donnees ;
         Schoolvi agit alors en qualite de sous-traitant, pour le compte et selon les instructions de
         l&apos;etablissement.
       </p>
@@ -48,8 +48,11 @@ export default function PrivacyPage() {
       </ul>
       <h3>2.2 Sur la plateforme Schoolvi</h3>
       <ul>
-        <li><strong>Comptes utilisateurs</strong> (direction, enseignants, personnel administratif, parents) :
+        <li><strong>Comptes utilisateurs</strong> (direction, enseignants, personnel administratif) :
           identite, email, telephone, role et etablissement de rattachement, journal de connexion.</li>
+        <li><strong>Messages WhatsApp</strong> echanges entre l&apos;etablissement et les parents ou le personnel :
+          numero de telephone, nom de profil WhatsApp, contenu des messages recus et envoyes, statut de
+          distribution.</li>
         <li><strong>Eleves</strong> : identite, date de naissance, sexe, classe, matricule, contacts des parents ou
           tuteurs, informations medicales utiles a la vie scolaire (allergies, contact d&apos;urgence), presences,
           notes, bulletins, situation des frais de scolarite, reclamations et suggestions.</li>
@@ -68,7 +71,7 @@ export default function PrivacyPage() {
           scolarite, communication avec les familles (execution du contrat).</li>
         <li>Creer et securiser les comptes, prevenir les acces non autorises (execution du contrat et interet
           legitime).</li>
-        <li>Facturer l&apos;abonnement et tenir notre comptabilite (obligation legale).</li>
+        <li>Suivre la contribution des familles collectee par l&apos;etablissement et tenir notre comptabilite (obligation legale).</li>
         <li>Repondre aux demandes de demonstration et de support (consentement et interet legitime).</li>
         <li>Ameliorer le Service a partir de statistiques d&apos;usage agregees et anonymisees (interet legitime).</li>
       </ul>
@@ -95,10 +98,10 @@ export default function PrivacyPage() {
 
       <h2>5. Duree de conservation</h2>
       <ul>
-        <li>Donnees des eleves et de la vie scolaire : pendant toute la duree de l&apos;abonnement de
+        <li>Donnees des eleves et de la vie scolaire : pendant toute la duree de l&apos;adhesion de
           l&apos;etablissement, puis suppression ou restitution dans un delai de 90 jours apres la fin du contrat,
           sauf obligation legale de conservation.</li>
-        <li>Donnees de facturation : 10 ans conformement aux obligations comptables.</li>
+        <li>Donnees comptables (contributions reversees) : 10 ans conformement aux obligations comptables.</li>
         <li>Demandes de demonstration et de contact : 24 mois apres le dernier echange.</li>
         <li>Journaux techniques de securite : 12 mois.</li>
       </ul>

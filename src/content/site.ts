@@ -171,10 +171,10 @@ export const PRICING = {
     "Personnel administratif illimité",
     "Tous les modules inclus",
     "Plusieurs établissements sur un seul compte",
-    "Espace parents et élèves",
+    "Espace parents sur WhatsApp",
     "Assistance par email et WhatsApp",
   ],
-  note: "Aucun abonnement ni frais d'installation pour l'établissement. Les parents versent 1 000 FCFA par élève et par an, soit moins de 3 FCFA par jour.",
+  note: "Aucun abonnement ni frais d'installation pour l'établissement. Les parents versent 1 000 FCFA par élève et par an, soit moins de 100 FCFA par mois, collectés par l'école.",
   cta: "Demander une démo",
 };
 
@@ -207,7 +207,7 @@ export const FAQ = [
   {
     question: "Combien coûte Schoolvi ?",
     answer:
-      "Rien pour l'établissement : Schoolvi est gratuit et illimité pour l'école (élèves, enseignants, personnel, modules, plusieurs établissements). Les parents versent 1 000 FCFA par élève et par an, soit moins de 3 FCFA par jour.",
+      "Rien pour l'établissement : Schoolvi est gratuit et illimité pour l'école (élèves, enseignants, personnel, modules, plusieurs établissements). Les parents versent 1 000 FCFA par élève et par an, soit moins de 100 FCFA par mois.",
   },
   {
     question: "Schoolvi convient-il à plusieurs établissements ?",
@@ -222,12 +222,12 @@ export const FAQ = [
   {
     question: "Comment se passe le paiement ?",
     answer:
-      "L'établissement ne paie rien. La contribution de 1 000 FCFA par élève et par an est payée par les parents ; nous convenons avec vous de la façon de la collecter lors de la mise en place.",
+      "L'établissement ne paie rien. Chaque famille verse 1 000 FCFA par élève et par an (moins de 100 FCFA par mois). L'école collecte cette contribution pour Schoolvi, par exemple avec les frais de scolarité, puis nous la reverse selon le calendrier convenu ensemble.",
   },
   {
     question: "Faut-il un compte pour chaque élève ?",
     answer:
-      "Non. Un élève peut exister dans Schoolvi sans accès de connexion, ce qui est fréquent pour les plus jeunes. Les parents peuvent suivre plusieurs enfants depuis un seul compte.",
+      "Non. Un élève peut exister dans Schoolvi sans accès de connexion, ce qui est fréquent pour les plus jeunes. Les parents suivent tous leurs enfants depuis leur numéro WhatsApp, sans application à installer.",
   },
 ] as const;
 
