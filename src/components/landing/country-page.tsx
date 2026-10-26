@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { CheckCircle2Icon, ChevronRightIcon, LandmarkIcon, MapPinIcon, PlusIcon, SmartphoneIcon } from "lucide-react";
+import { CheckCircle2Icon, ChevronRightIcon, PlusIcon } from "lucide-react";
 
 import { CountryMarquee } from "@/components/landing/country-marquee";
 import { FinalCta } from "@/components/landing/final-cta";
@@ -32,6 +32,13 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
   const otherCountries = COUNTRIES.filter((c) => c.slug !== country.slug);
   const countryDemoUrl = getWhatsAppDemoUrl(country.inName);
   const acronym = ministryAcronym(country.ministry);
+  const ministryName = country.ministry.replace(/\s*\([^)]*\)/g, "").replace(/\s*&.*$/, "");
+  // « Orange Money CI », « Flooz (Moov Africa Togo) » : le nom de l'operateur suffit.
+  const payments = country.mobileMoney.map((m) =>
+    m
+      .replace(/\s*\([^)]*\)/g, "")
+      .replace(new RegExp(`\\s+(${country.name}|${country.name.split(" ")[0]}|${country.code})$`), ""),
+  );
   // La contribution est fixee en FCFA ; en Guinee (franc guineen) le montant
   // n'est pas annonce.
   const usesFcfa = country.currency === "XOF" || country.currency === "XAF";
@@ -117,7 +124,11 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
               {country.heroBadge}
             </div>
 
-            <h1 className="font-display mt-6 max-w-4xl text-[38px] leading-[1.06] text-ink sm:text-[52px] md:text-[60px]">{country.heroTitle}</h1>
+            <h1 className="font-display mt-6 text-[40px] leading-[1.04] text-ink sm:text-[56px] md:text-[64px]">
+              Le logiciel de gestion scolaire
+              <br />
+              des écoles {country.ofName}
+            </h1>
 
             <p className="mt-6 max-w-2xl text-[16px] leading-relaxed text-muted-foreground sm:text-[17px] md:text-[19px]">{country.heroSubtitle}</p>
 
@@ -145,7 +156,7 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
 
         <section className="mx-auto max-w-[1240px] px-4 pt-20 sm:px-6 sm:pt-32">
           <h2 className="font-display max-w-2xl text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">
-            Pourquoi les écoles {country.ofName} choisissent Schoolvi
+            Pensé pour les écoles {country.ofName}
           </h2>
 
           <div className="mt-10 grid gap-2 md:grid-cols-2 sm:mt-12">
@@ -163,19 +174,31 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
             })}
           </div>
 
-          <div className="mt-2 grid rounded-3xl border border-stone-300 bg-white sm:rounded-[32px] md:grid-cols-3">
-            <LocalFact icon={<MapPinIcon className="size-4" />} label="Partout dans le pays">
-              <Chips items={country.mainCities.slice(0, 6)} />
-              <p className="mt-4 text-[15px] text-muted-foreground">Fonctionne avec une connexion mobile modeste.</p>
-            </LocalFact>
-            <LocalFact icon={<SmartphoneIcon className="size-4" />} label="Paiements suivis" className="border-t border-stone-300 md:border-l md:border-t-0">
-              <Chips items={country.mobileMoney} />
-              <p className="mt-4 text-[15px] text-muted-foreground">Chaque versement a son reçu, la caisse tombe juste.</p>
-            </LocalFact>
-            <LocalFact icon={<LandmarkIcon className="size-4" />} label="Programmes officiels" className="border-t border-stone-300 md:border-l md:border-t-0">
-              <p className="text-[17px] leading-snug text-ink">{country.ministry}</p>
-              <p className="mt-4 text-[15px] text-muted-foreground">Coefficients, moyennes et bulletins alignés sur ses directives.</p>
-            </LocalFact>
+          <div className="mt-2 grid gap-2 md:grid-cols-3">
+            <LocalCard tone="sky" blob={{ shape: "leaf", tone: "sky" }} label="Villes">
+              <p className="font-display text-[30px] leading-[1.1] text-ink sm:text-[34px]">
+                Partout
+                <br />
+                {country.inName}
+              </p>
+              <Chips items={country.mainCities.slice(0, 5)} />
+            </LocalCard>
+            <LocalCard tone="mint" blob={{ shape: "sun", tone: "brand" }} label="Paiements">
+              <p className="font-display text-[30px] leading-[1.1] text-ink sm:text-[34px]">
+                <span className="text-[56px] leading-none sm:text-[64px]">{payments.length}</span>
+                <br />
+                façons de payer
+              </p>
+              <Chips items={payments} />
+            </LocalCard>
+            <LocalCard tone="lilac" blob={{ shape: "pill", tone: "lilac" }} label="Programmes officiels">
+              <p className="font-display text-[30px] leading-[1.1] text-ink sm:text-[34px]">
+                {acronym ? <span className="text-[44px] leading-none sm:text-[52px]">{acronym}</span> : "Conforme"}
+                <br />
+                100 % conforme
+              </p>
+              <p className="mt-6 text-[15px] leading-snug text-ink/70">{ministryName}</p>
+            </LocalCard>
           </div>
         </section>
 
@@ -188,7 +211,7 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
                 fréquentes
               </h2>
               <p className="mt-4 max-w-sm text-[17px] text-muted-foreground">
-                Posées par les chefs d&apos;établissement {country.inName}. Une autre question ? On vous répond sur WhatsApp.
+                Une autre question ? On vous répond sur WhatsApp.
               </p>
               <div className="mt-6">
                 <PillButton href={countryDemoUrl} variant="arrow">
@@ -216,8 +239,8 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
         </section>
 
         <FinalCta
-          title={`Rejoignez les écoles ${country.ofName} qui gagnent du temps`}
-          description="Démarrage en 30 minutes, aucun frais pour votre établissement. Parlons-en sur WhatsApp."
+          title={`Rejoignez les écoles ${country.ofName}`}
+          description="Démarrage en 30 minutes, aucun frais pour votre établissement."
           cta="Demander votre démo gratuite"
           href={countryDemoUrl}
         />
@@ -229,23 +252,25 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
   );
 }
 
-function LocalFact({ icon, label, className, children }: { icon: ReactNode; label: string; className?: string; children: ReactNode }) {
+const CARD_TONES = { sky: "bg-[#e4eefc]", mint: "bg-[#e3f5e8]", lilac: "bg-[#efe6fb]" };
+
+type BlobProps = { shape: "sun" | "leaf" | "pill"; tone: "brand" | "sky" | "lilac" | "mint" };
+
+function LocalCard({ tone, blob, label, children }: { tone: keyof typeof CARD_TONES; blob: BlobProps; label: string; children: ReactNode }) {
   return (
-    <div className={`p-6 sm:p-9 ${className ?? ""}`}>
-      <p className="flex items-center gap-2 text-[15px] text-muted-foreground">
-        <span className="grid size-8 place-items-center rounded-full bg-stone-100 text-brand">{icon}</span>
-        {label}
-      </p>
-      <div className="mt-5">{children}</div>
+    <div className={`relative flex flex-col overflow-hidden rounded-3xl p-6 sm:rounded-[32px] sm:p-9 ${CARD_TONES[tone]}`}>
+      <Blob shape={blob.shape} tone={blob.tone} face className="absolute -right-3 -top-3 size-20 sm:size-24" />
+      <p className="text-[15px] text-ink/60">{label}</p>
+      <div className="mt-6">{children}</div>
     </div>
   );
 }
 
 function Chips({ items }: { items: string[] }) {
   return (
-    <ul className="flex flex-wrap gap-2">
+    <ul className="mt-6 flex flex-wrap gap-2">
       {items.map((item) => (
-        <li key={item} className="rounded-full bg-stone-100 px-3 py-1 text-[15px] text-ink">
+        <li key={item} className="rounded-full bg-white px-3.5 py-1.5 text-[15px] text-ink">
           {item}
         </li>
       ))}

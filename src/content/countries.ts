@@ -19,7 +19,6 @@ export type CountrySeo = {
   seoDescription: string;
   metaKeywords: string[];
   heroBadge: string;
-  heroTitle: string;
   heroSubtitle: string;
   advantages: {
     title: string;
@@ -61,30 +60,25 @@ export const COUNTRIES: CountrySeo[] = [
       "gestion élèves Togo",
       "Schoolvi Togo",
     ],
-    heroBadge: "N°1 des logiciels de gestion scolaire au Togo",
-    heroTitle: "Le logiciel de gestion d'établissement scolaire de référence au Togo",
+    heroBadge: "N°1 de la gestion scolaire au Togo",
     heroSubtitle:
-      "Conçu pour la réalité des écoles primaires, collèges et lycées de Lomé et des cinq régions togolaises : encaissez les frais via T-Money et Flooz, calculez vos bulletins automatiquement sans recopie de notes et prévenez les parents sur WhatsApp.",
+      "Frais encaissés en espèces, T-Money ou Flooz, bulletins sans recopie, parents prévenus sur WhatsApp. De Lomé à Dapaong.",
     advantages: [
       {
-        title: "Intégration T-Money & Flooz",
-        description:
-          "Les familles togolaises paient la scolarité en espèces ou directement par T-Money et Flooz. Schoolvi suit chaque versement en temps réel, émet un reçu numérique et met à jour la trésorerie de l'école.",
+        title: "T-Money et Flooz",
+        description: "Chaque versement est enregistré avec son reçu. La caisse est toujours à jour.",
       },
       {
-        title: "Bulletins 100% conformes au MEPST",
-        description:
-          "Calcul automatique des moyennes trimestrielles et annuelles selon les coefficients officiels togolais, classement des élèves et édition des bulletins en un clic sans aucune erreur manuelle.",
+        title: "Bulletins conformes au MEPST",
+        description: "Moyennes, rangs et bulletins calculés avec les coefficients officiels. Sans recopie, sans erreur.",
       },
       {
-        title: "Relances des parents sur WhatsApp",
-        description:
-          "Au Togo, tout le monde est sur WhatsApp. Schoolvi alerte les parents dès la première absence non justifiée et envoie les rappels d'échéances de scolarité avec le solde exact.",
+        title: "Parents prévenus sur WhatsApp",
+        description: "Une absence, une échéance : le parent reçoit le message aussitôt, avec le montant exact.",
       },
       {
-        title: "Gratuit pour l'établissement togolais",
-        description:
-          "L'école ne paie aucun frais d'abonnement ni d'installation. Seule une contribution minime de 1 000 FCFA par an et par élève est payée par les parents (moins de 100 FCFA par mois).",
+        title: "Gratuit pour l'école",
+        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -133,30 +127,25 @@ export const COUNTRIES: CountrySeo[] = [
       "gestion élèves Bénin",
       "Schoolvi Bénin",
     ],
-    heroBadge: "Le logiciel de gestion scolaire n°1 au Bénin",
-    heroTitle: "Le logiciel de gestion d'établissement scolaire n°1 au Bénin",
+    heroBadge: "N°1 de la gestion scolaire au Bénin",
     heroSubtitle:
-      "Pensé pour les complexes scolaires, collèges et lycées de Cotonou, Porto-Novo, Abomey-Calavi et Parakou : automatisez vos bulletins aux normes béninoises, encaissez via MTN MoMo et Moov Money, et éliminez les impayés.",
+      "Frais suivis via MTN MoMo et Moov Money, bulletins aux normes béninoises, parents prévenus sur WhatsApp. De Cotonou à Parakou.",
     advantages: [
       {
-        title: "Paiements MTN MoMo & Moov Money Bénin",
-        description:
-          "Encaissez les frais de scolarité en toute transparence via les réseaux mobiles les plus utilisés au Bénin (MTN et Moov). Plus de risque de caisse ni de reçus papier perdus.",
+        title: "MTN MoMo et Moov Money",
+        description: "Chaque versement est enregistré avec son reçu. Fini les reçus papier perdus.",
       },
       {
-        title: "Bulletins conformes aux normes MESTFP & MEMP",
-        description:
-          "Génération automatique des bulletins périodiques et récapitulatifs annuels avec coefficients officiels béninois, calcul des moyennes générales, rangs et appréciations des enseignants.",
+        title: "Bulletins aux normes MESTFP",
+        description: "Moyennes, rangs et appréciations calculés avec les coefficients officiels béninois.",
       },
       {
-        title: "Communication école-famille sur WhatsApp",
-        description:
-          "Au Bénin, tenez les parents informés en temps réel : alertes en cas de retard ou d'absence d'un élève, relances douces pour les échéances de scolarité, convocations et avis de l'administration.",
+        title: "Familles informées sur WhatsApp",
+        description: "Absences, retards, échéances et avis de l'école arrivent directement chez les parents.",
       },
       {
-        title: "Zéro coût pour la direction de l'école",
-        description:
-          "Schoolvi est 100% gratuit pour l'établissement scolaire. Les parents s'acquittent d'une modeste contribution de 1 000 FCFA par élève et par an, prélevée par l'école lors de l'inscription.",
+        title: "Zéro coût pour l'école",
+        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -204,30 +193,25 @@ export const COUNTRIES: CountrySeo[] = [
       "gestion élèves Abidjan DREN",
       "Schoolvi Côte d'Ivoire",
     ],
-    heroBadge: "Le logiciel scolaire nouvelle génération en Côte d'Ivoire",
-    heroTitle: "Le logiciel de gestion scolaire tout-en-un en Côte d'Ivoire",
+    heroBadge: "Nouvelle génération en Côte d'Ivoire",
     heroSubtitle:
-      "Adapté aux groupes scolaires, collèges et lycées d'Abidjan, Bouaké, Yamoussoukro et San-Pédro : bulletins conformes aux exigences du MENA, paiements Wave / Orange Money / MTN MoMo, et suivi instantané des élèves sur WhatsApp.",
+      "Paiements Wave, Orange Money et MTN MoMo, bulletins conformes au MENA, parents prévenus sur WhatsApp. D'Abidjan à Korhogo.",
     advantages: [
       {
-        title: "Intégration Wave, Orange Money & MTN MoMo",
-        description:
-          "Facilitez la vie des parents ivoiriens en leur permettant de régler la scolarité via Wave, Orange Money ou MTN Mobile Money. La trésorerie de votre école est mise à jour instantanément.",
+        title: "Wave, Orange Money, MTN",
+        description: "Les parents paient comme ils en ont l'habitude. La trésorerie se met à jour à chaque versement.",
       },
       {
-        title: "Bulletins conformes aux directives MENA",
-        description:
-          "Édition rapide des bulletins de notes (trimestriels ou semestriels) avec coefficients officiels ivoiriens, calcul des moyennes pondérées, des rangs et des appréciations pour toutes les classes de la 6ème à la Terminale.",
+        title: "Bulletins conformes au MENA",
+        description: "De la 6ème à la Terminale, moyennes et rangs calculés pour vous, par trimestre ou par semestre.",
       },
       {
-        title: "Contrôle des présences et alertes WhatsApp",
-        description:
-          "Les professeurs font l'appel en un clic depuis leur smartphone en début de cours. Les parents à Abidjan ou en province reçoivent immédiatement un message WhatsApp en cas d'absence.",
+        title: "L'appel en un clic",
+        description: "Le professeur fait l'appel sur son téléphone. Le parent est prévenu sur WhatsApp dans la minute.",
       },
       {
-        title: "Modèle gratuit pour l'établissement",
-        description:
-          "Aucun frais de licence ni d'hébergement pour l'école. Les parents contribuent à hauteur de 1 000 FCFA par élève et par an, collectés simplement lors des frais annexes d'inscription.",
+        title: "Gratuit pour l'école",
+        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -275,30 +259,25 @@ export const COUNTRIES: CountrySeo[] = [
       "gestion élèves Dakar IA IEF",
       "Schoolvi Sénégal",
     ],
-    heroBadge: "La référence de la gestion scolaire au Sénégal",
-    heroTitle: "Le logiciel de gestion scolaire moderne au Sénégal",
+    heroBadge: "La référence au Sénégal",
     heroSubtitle:
-      "Pour les écoles primaires, collèges et lycées de Dakar, Thiès, Saint-Louis et Mbour : gérez les inscriptions, éditez les bulletins conformes aux inspections et encaissez la scolarité en toute sérénité via Wave et Orange Money.",
+      "Scolarité réglée par Wave ou Orange Money, bulletins conformes, parents prévenus sur WhatsApp. De Dakar à Saint-Louis.",
     advantages: [
       {
-        title: "Compatibilité Wave & Orange Money Sénégal",
-        description:
-          "Simplifiez le recouvrement des mensualités grâce aux moyens de paiement préférés des familles sénégalaises : Wave et Orange Money, avec reçus automatiques et zéro litige.",
+        title: "Wave et Orange Money",
+        description: "Les mensualités se règlent comme les familles le préfèrent, avec un reçu à chaque paiement.",
       },
       {
-        title: "Bulletins semestriels conformes MEN",
-        description:
-          "Calcul automatique des moyennes par matière, coefficients officiels, rangs et édition des livrets scolaires conformes aux exigences des Inspections d'Académie (IA) et IEF.",
+        title: "Bulletins semestriels conformes",
+        description: "Moyennes, coefficients et rangs conformes aux exigences des IA et des IEF.",
       },
       {
-        title: "Communication WhatsApp en temps réel",
-        description:
-          "Prévenez instantanément les parents à chaque absence ou retard, partagez les convocations et envoyez les récapitulatifs de notes directement sur WhatsApp sans coût SMS.",
+        title: "WhatsApp, sans coût SMS",
+        description: "Absences, retards, convocations et notes partent directement sur WhatsApp.",
       },
       {
-        title: "100% gratuit pour l'école sénégalaise",
-        description:
-          "Sans abonnement mensuel ni engagement pour l'établissement scolaire. Une contribution de 1 000 FCFA par élève et par an est prise en charge par les parents.",
+        title: "Gratuit pour l'école",
+        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -346,30 +325,25 @@ export const COUNTRIES: CountrySeo[] = [
       "gestion élèves Burkina Faso",
       "Schoolvi Burkina Faso",
     ],
-    heroBadge: "Le logiciel scolaire de référence au Burkina Faso",
-    heroTitle: "Le logiciel de gestion scolaire tout-en-un au Burkina Faso",
+    heroBadge: "La référence au Burkina Faso",
     heroSubtitle:
-      "Conçu pour les écoles primaires, collèges et lycées de Ouagadougou, Bobo-Dioulasso et de toutes les régions burkinabè : gestion des effectifs, bulletins automatiques conformes MENAPLN, encaissements Orange Money & Moov Money, alertes WhatsApp.",
+      "Paiements Orange Money et Moov Money, bulletins conformes au MENAPLN, parents prévenus sur WhatsApp. De Ouagadougou à Bobo-Dioulasso.",
     advantages: [
       {
-        title: "Intégration Orange Money & Moov Money Burkina",
-        description:
-          "Suivez les encaissements de scolarité en temps réel via Orange Money et Moov Money Burkina. Reçus numériques immédiats et zéro retard de trésorerie.",
+        title: "Orange Money et Moov Money",
+        description: "Chaque encaissement est suivi en temps réel, avec un reçu numérique immédiat.",
       },
       {
-        title: "Bulletins 100% conformes aux normes MENAPLN",
-        description:
-          "Calcul automatique des moyennes trimestrielles et annuelles selon les coefficients officiels du Burkina Faso, livrets scolaires et procès-verbaux de fin d'année.",
+        title: "Bulletins conformes au MENAPLN",
+        description: "Moyennes, livrets et procès-verbaux de fin d'année calculés avec les coefficients officiels.",
       },
       {
-        title: "Alertes WhatsApp immédiates pour les parents",
-        description:
-          "Prévenez les parents burkinabè dès le premier retard ou absence non justifiée. Envoyez les convocations et les bilans de notes directement sur WhatsApp.",
+        title: "Parents alertés sur WhatsApp",
+        description: "Dès le premier retard ou la première absence, le parent est prévenu.",
       },
       {
-        title: "Zéro coût pour l'établissement scolaire",
-        description:
-          "Schoolvi est 100% gratuit et illimité pour l'école au Burkina Faso. Une modeste participation de 1 000 FCFA par élève et par an est prise en charge par les familles.",
+        title: "Zéro coût pour l'école",
+        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -416,30 +390,25 @@ export const COUNTRIES: CountrySeo[] = [
       "gestion élèves Mali Académie Enseignement",
       "Schoolvi Mali",
     ],
-    heroBadge: "La référence de la gestion scolaire au Mali",
-    heroTitle: "Le logiciel de gestion d'établissement scolaire n°1 au Mali",
+    heroBadge: "La référence au Mali",
     heroSubtitle:
-      "Adapté aux groupes scolaires, collèges et lycées de Bamako (Rive droite & gauche), Sikasso, Ségou et Kayes : gérez les inscriptions, éditez les bulletins conformes aux Académies d'Enseignement et suivez la scolarité par Orange Money et Moov Money.",
+      "Paiements Orange Money et Moov Money, bulletins conformes, parents prévenus sur WhatsApp. De Bamako à Kayes.",
     advantages: [
       {
-        title: "Orange Money Mali, Moov Money & Wave",
-        description:
-          "Facilitez le paiement des frais de scolarité des familles maliennes grâce aux réseaux mobiles populaires. Suivi en temps réel et reçus numériques automatiques.",
+        title: "Orange Money, Moov, Wave",
+        description: "Les familles paient par Mobile Money, et chaque versement a son reçu.",
       },
       {
-        title: "Bulletins conformes aux Académies d'Enseignement (AE)",
-        description:
-          "Édition automatique des relevés et bulletins de notes périodiques avec respect rigoureux des coefficients et formats exigés par le Ministère de l'Éducation Nationale du Mali.",
+        title: "Bulletins conformes aux AE",
+        description: "Relevés et bulletins aux coefficients et formats exigés par le ministère.",
       },
       {
-        title: "Vie scolaire et communication WhatsApp",
-        description:
-          "Suivi des présences en temps réel, signalement des retards et absences par message WhatsApp direct aux parents à Bamako et dans les régions.",
+        title: "Vie scolaire sur WhatsApp",
+        description: "Retards et absences signalés aux parents, à Bamako comme dans les régions.",
       },
       {
-        title: "100% gratuit pour l'école malienne",
-        description:
-          "Aucun abonnement logiciel pour l'établissement. Une contribution de 1 000 FCFA par élève et par an est versée par les parents lors de la scolarité.",
+        title: "Gratuit pour l'école",
+        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -486,30 +455,25 @@ export const COUNTRIES: CountrySeo[] = [
       "Schoolvi Guinée",
       "gestion élèves Guinée DPE DCE",
     ],
-    heroBadge: "Le logiciel scolaire nouvelle génération en Guinée",
-    heroTitle: "Le logiciel de gestion d'établissement scolaire leader en Guinée",
+    heroBadge: "Le leader en Guinée",
     heroSubtitle:
-      "Pour les complexes scolaires, collèges et lycées de Conakry (Kaloum, Dixinn, Matam, Ratoma, Matoto), Kankan, Kindia et Labé : bulletins conformes aux directives du MEPU-A, gestion des frais et alertes WhatsApp aux familles.",
+      "Bulletins conformes au MEPU-A, frais suivis jusqu'au dernier versement, parents prévenus sur WhatsApp. De Conakry à Labé.",
     advantages: [
       {
-        title: "Paiements Orange Money & MTN MoMo Guinée",
-        description:
-          "Chaque versement des familles, en espèces, par Orange Money ou par MTN, est enregistré avec son reçu. La direction voit à tout moment qui a payé et qui est en retard.",
+        title: "Orange Money et MTN",
+        description: "Chaque versement est enregistré avec son reçu. Vous voyez qui a payé et qui est en retard.",
       },
       {
-        title: "Bulletins conformes aux normes MEPU-A",
-        description:
-          "Calcul automatique des moyennes trimestrielles et annuelles selon les coefficients officiels guinéens, classements de fin de période et appréciations pédagogiques.",
+        title: "Bulletins conformes au MEPU-A",
+        description: "Moyennes, classements et appréciations calculés avec les coefficients officiels guinéens.",
       },
       {
-        title: "Parents alertés en direct sur WhatsApp",
-        description:
-          "Les parents à Conakry et en province sont informés des absences dès le début du cours, des résultats scolaires et des échéances de scolarité directement sur WhatsApp.",
+        title: "Parents alertés sur WhatsApp",
+        description: "Absences, résultats et échéances arrivent chez les parents, à Conakry comme en province.",
       },
       {
-        title: "Gratuit pour les établissements guinéens",
-        description:
-          "Zéro frais de licence pour l'établissement. Une contribution modique par élève et par an est prise en charge par les parents lors de l'inscription.",
+        title: "Gratuit pour l'école",
+        description: "Aucune licence à payer. Une petite contribution annuelle par élève est versée par les parents.",
       },
     ],
     localFaqs: [
@@ -556,30 +520,25 @@ export const COUNTRIES: CountrySeo[] = [
       "Schoolvi Niger",
       "gestion élèves Niger DREN",
     ],
-    heroBadge: "La référence de la gestion scolaire au Niger",
-    heroTitle: "Le logiciel de gestion scolaire tout-en-un au Niger",
+    heroBadge: "La référence au Niger",
     heroSubtitle:
-      "Conçu pour les complexes scolaires, collèges et lycées de Niamey, Zinder, Maradi et Tahoua : automatisez vos bulletins aux normes du Niger, suivez les encaissements Airtel Money & Moov Money, et informez les familles sur WhatsApp.",
+      "Paiements Airtel Money et Moov Money, bulletins conformes, parents prévenus sur WhatsApp. De Niamey à Zinder.",
     advantages: [
       {
-        title: "Airtel Money, Moov Money & Zamani Cash",
-        description:
-          "Permettez aux parents de régler les frais de scolarité en espèces ou via leur compte Mobile Money nigérien. Reçus instantanés et trésorerie claire.",
+        title: "Airtel, Moov, Zamani Cash",
+        description: "Les parents paient en espèces ou par Mobile Money. Reçu immédiat, trésorerie claire.",
       },
       {
-        title: "Bulletins conformes aux programmes officiels du Niger",
-        description:
-          "Génération automatique des bulletins périodiques et annuels avec coefficients nigériens, calcul des moyennes et rangs sans risque d'erreur de calcul.",
+        title: "Bulletins conformes",
+        description: "Moyennes et rangs calculés avec les coefficients officiels du Niger, sans erreur.",
       },
       {
-        title: "Suivi des absences sur WhatsApp",
-        description:
-          "Prévenez immédiatement les familles dès qu'une absence est constatée en classe pour lutter efficacement contre le décrochage scolaire.",
+        title: "Absences signalées sur WhatsApp",
+        description: "La famille est prévenue dès l'absence constatée : le meilleur rempart contre le décrochage.",
       },
       {
-        title: "Zéro coût pour la direction de l'école",
-        description:
-          "Schoolvi est 100% gratuit pour l'établissement scolaire nigérien. Les parents versent 1 000 FCFA par élève et par an, soit moins de 100 FCFA par mois.",
+        title: "Zéro coût pour l'école",
+        description: "Les parents versent 1 000 FCFA par élève et par an, moins de 100 FCFA par mois.",
       },
     ],
     localFaqs: [
@@ -627,30 +586,25 @@ export const COUNTRIES: CountrySeo[] = [
       "Schoolvi Cameroun",
       "gestion élèves Cameroun Délégué Régional",
     ],
-    heroBadge: "Le logiciel scolaire moderne au Cameroun",
-    heroTitle: "Le logiciel de gestion d'établissement scolaire de référence au Cameroun",
+    heroBadge: "Le logiciel moderne du Cameroun",
     heroSubtitle:
-      "Pour les collèges, lycées et groupes scolaires de Douala, Yaoundé, Bafoussam et des dix régions camerounaises : bulletins conformes aux exigences MINESEC, encaissement Orange Money et MTN MoMo, zéro litige financier.",
+      "Bulletins par séquence conformes au MINESEC, paiements Orange Money et MTN MoMo, parents prévenus sur WhatsApp. De Douala à Garoua.",
     advantages: [
       {
-        title: "Intégration Orange Money & MTN MoMo Cameroun",
-        description:
-          "Encaissez les frais de scolarité via les deux opérateurs majeurs au Cameroun (Orange et MTN). Trésorerie en temps réel et reçus certifiés.",
+        title: "Orange Money et MTN MoMo",
+        description: "Les frais se règlent sur les deux grands réseaux du pays, avec un reçu à chaque versement.",
       },
       {
-        title: "Bulletins conformes aux normes MINESEC",
-        description:
-          "Calcul automatique des séquences, trimestres et moyennes annuelles selon les coefficients et compétences officielles camerounaises.",
+        title: "Bulletins conformes au MINESEC",
+        description: "Séquences, trimestres et moyennes annuelles calculés avec les coefficients officiels.",
       },
       {
-        title: "Communication WhatsApp avec les parents",
-        description:
-          "Alertez les familles camerounaises dès la première heure d'absence, envoyez les convocations et facilitez le suivi régulier du travail scolaire.",
+        title: "Parents prévenus sur WhatsApp",
+        description: "Dès la première heure d'absence, avec les convocations et le suivi du travail.",
       },
       {
-        title: "100% gratuit pour l'école camerounaise",
-        description:
-          "Aucun abonnement logiciel pour l'établissement. Une contribution modique de 1 000 FCFA par élève et par an est versée par les parents.",
+        title: "Gratuit pour l'école",
+        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
