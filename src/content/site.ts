@@ -8,12 +8,21 @@ export const NAV_LINKS = [
   { label: "Contact", href: "/#contact" },
 ] as const;
 
-export const DEMO_URL = "https://calendly.com/schoolvi-app/30min";
+export const WHATSAPP_PHONE = "+22871832660";
+export const DEMO_URL =
+  "https://wa.me/22871832660?text=Bonjour%2C%20je%20souhaite%20demander%20une%20d%C3%A9monstration%20de%20Schoolvi%20pour%20mon%20%C3%A9tablissement%20scolaire.";
+
+export function getWhatsAppDemoUrl(countryName?: string) {
+  const message = countryName
+    ? `Bonjour, je souhaite demander une démonstration de Schoolvi pour mon établissement scolaire au ${countryName}.`
+    : `Bonjour, je souhaite demander une démonstration de Schoolvi pour mon établissement scolaire.`;
+  return `https://wa.me/22871832660?text=${encodeURIComponent(message)}`;
+}
 
 export const CTA = {
   primary: { label: "Demander une démo", href: DEMO_URL },
   login: { label: "Se connecter", href: `${APP_URL}/login` },
-  contact: { label: "Nous contacter", href: "mailto:contact@schoolvi.co" },
+  contact: { label: "Nous contacter", href: `https://wa.me/22871832660?text=Bonjour%20Schoolvi` },
 };
 
 export const HERO = {

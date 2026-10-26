@@ -9,11 +9,12 @@ import { Blob } from "@/components/ui/blob";
 import { PillButton } from "@/components/ui/pill-button";
 import type { CountrySeo } from "@/content/countries";
 import { COUNTRIES } from "@/content/countries";
-import { CTA, DEMO_URL, PRICING } from "@/content/site";
+import { CTA, DEMO_URL, PRICING, getWhatsAppDemoUrl } from "@/content/site";
 import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export function CountryPageTemplate({ country }: { country: CountrySeo }) {
   const otherCountries = COUNTRIES.filter((c) => c.slug !== country.slug);
+  const countryDemoUrl = getWhatsAppDemoUrl(country.name);
 
   const localStructuredData = {
     "@context": "https://schema.org",
@@ -39,7 +40,7 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
           priceCurrency: "XOF",
           description: `Gratuit et illimité pour l'établissement. Contribution de ${PRICING.pricePerStudentPerYear} FCFA par élève et par an versée par les familles.`,
           availability: "https://schema.org/InStock",
-          url: DEMO_URL,
+          url: countryDemoUrl,
           areaServed: country.code,
         },
         aggregateRating: {
@@ -107,11 +108,11 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
 
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-10">
-              <PillButton href={CTA.primary.href} variant="arrow">
+              <PillButton href={countryDemoUrl} variant="arrow">
                 {CTA.primary.label}
               </PillButton>
-              <PillButton href={`mailto:${CONTACT_EMAIL}?subject=Demande%20Schoolvi%20${country.name}`} variant="soft">
-                Échanger avec un conseiller {country.name}
+              <PillButton href={countryDemoUrl} variant="soft">
+                Échanger sur WhatsApp ({country.name})
               </PillButton>
             </div>
 
@@ -218,8 +219,8 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
                 Vous avez d&apos;autres questions spécifiques à votre inspection ou diocèse ? Nos équipes vous répondent en direct sur WhatsApp.
               </p>
               <div className="mt-6">
-                <PillButton href={CTA.primary.href} variant="arrow">
-                  Poser une question en démo
+                <PillButton href={countryDemoUrl} variant="arrow">
+                  Poser une question sur WhatsApp
                 </PillButton>
               </div>
             </div>
@@ -275,7 +276,7 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
               Démarrage en 30 minutes. Zéro frais pour votre école.
             </p>
             <div className="mt-8 flex justify-center">
-              <PillButton href={CTA.primary.href} variant="arrow">
+              <PillButton href={countryDemoUrl} variant="arrow">
                 Demander votre démonstration gratuite
               </PillButton>
             </div>

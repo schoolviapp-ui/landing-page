@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRightIcon, CheckCircle2Icon, MapPinIcon, SmartphoneIcon } from "lucide-react";
 
 import { COUNTRIES } from "@/content/countries";
+import { DEMO_URL } from "@/content/site";
 
 export function RegionalCoverage() {
   return (
@@ -82,8 +83,8 @@ export function RegionalCoverage() {
         <p>
           <strong className="text-ink font-semibold">Votre établissement scolaire est dans un autre pays ?</strong>{" "}
           (Tchad, Gabon, RDC, Congo...) Schoolvi s&apos;adapte à tout établissement de la zone francophone UEMOA, CEMAC et OHADA.{" "}
-          <a href="mailto:contact@schoolvi.co" className="font-semibold text-brand underline underline-offset-4 hover:text-ink">
-            Contactez notre équipe pour une démonstration personnalisée
+          <a href={DEMO_URL} target="_blank" rel="noreferrer" className="font-semibold text-brand underline underline-offset-4 hover:text-ink">
+            Contactez notre équipe sur WhatsApp pour une démonstration personnalisée
           </a>
         </p>
       </div>
