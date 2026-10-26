@@ -12,9 +12,10 @@ export const WHATSAPP_PHONE = "+22871832660";
 export const DEMO_URL =
   "https://wa.me/22871832660?text=Bonjour%2C%20je%20souhaite%20demander%20une%20d%C3%A9monstration%20de%20Schoolvi%20pour%20mon%20%C3%A9tablissement%20scolaire.";
 
-export function getWhatsAppDemoUrl(countryName?: string) {
-  const message = countryName
-    ? `Bonjour, je souhaite demander une démonstration de Schoolvi pour mon établissement scolaire au ${countryName}.`
+/** inName : « au Togo », « en Guinée ». */
+export function getWhatsAppDemoUrl(inName?: string) {
+  const message = inName
+    ? `Bonjour, je souhaite demander une démonstration de Schoolvi pour mon établissement scolaire ${inName}.`
     : `Bonjour, je souhaite demander une démonstration de Schoolvi pour mon établissement scolaire.`;
   return `https://wa.me/22871832660?text=${encodeURIComponent(message)}`;
 }
@@ -29,8 +30,8 @@ export const HERO = {
   badge: "Logiciel de gestion d'établissement scolaire n°1 en Afrique de l'Ouest",
   title: ["Le logiciel de gestion scolaire", "pensé pour l'Afrique de l'Ouest"],
   description: [
-    "Schoolvi libère les écoles, collèges et lycées du Togo, du Bénin, de Côte d'Ivoire et de la sous-région : bulletins automatiques sans recopie de notes, recouvrement des frais de scolarité (T-Money, Flooz, MTN, Wave), relances WhatsApp et assistant IA.",
-    "100% gratuit et illimité pour l'établissement scolaire.",
+    "Bulletins calculés sans recopier une seule note, frais de scolarité suivis jusqu'au dernier franc, parents prévenus sur WhatsApp dès la première absence, et un assistant IA qui répond à vos questions.",
+    "Gratuit et illimité pour l'établissement.",
   ],
 };
 
@@ -69,7 +70,7 @@ export const VALUE_PROPS = [
 ] as const;
 
 export const SOCIAL_PROOF =
-  "Pensé pour la réalité des écoles en Afrique de l'Ouest (Togo, Bénin, Côte d'Ivoire, Sénégal) : paiements en espèces et Mobile Money (T-Money, Flooz, MTN MoMo, Wave, Orange Money), parents joignables sur WhatsApp, bulletins conformes aux programmes officiels.";
+  "Pensé pour la réalité des écoles d'Afrique de l'Ouest : paiements en espèces ou par Mobile Money, parents joignables sur WhatsApp, classes chargées, bulletins conformes aux programmes officiels.";
 
 export type Module = {
   id: string;
@@ -192,17 +193,17 @@ export const FAQ = [
   {
     question: "Quel est le meilleur logiciel de gestion d'établissement scolaire au Togo, au Bénin et en Côte d'Ivoire ?",
     answer:
-      "Schoolvi est la référence des logiciels de gestion d'établissement scolaire en Afrique de l'Ouest (Togo, Bénin, Côte d'Ivoire, Sénégal...). Pensé pour la réalité locale, il centralise les dossiers élèves, automatise le calcul des moyennes et l'édition des bulletins selon les programmes officiels, encaisse les frais par Mobile Money (T-Money, Flooz, MTN MoMo, Wave, Orange Money) et alerte les parents sur WhatsApp. De plus, il est 100% gratuit pour l'école.",
+      "Schoolvi est la référence des logiciels de gestion d'établissement scolaire en Afrique de l'Ouest. Pensé pour la réalité locale, il centralise les dossiers élèves, automatise le calcul des moyennes et l'édition des bulletins selon les programmes officiels, encaisse les frais par Mobile Money (T-Money, Flooz, MTN MoMo, Wave, Orange Money) et alerte les parents sur WhatsApp. De plus, il est 100% gratuit pour l'école.",
   },
   {
     question: "Comment Schoolvi calcule-t-il les moyennes et bulletins scolaires sans corvée ?",
     answer:
-      "Chaque enseignant saisit les notes de ses interrogations et devoirs depuis un ordinateur ou son téléphone. Schoolvi applique automatiquement les coefficients officiels de chaque matière (programmes MEPST au Togo, MESTFP au Bénin, MENA en Côte d'Ivoire, MEN au Sénégal), calcule les moyennes générales, établit les rangs de classe et génère des bulletins clairs et prêts à imprimer en PDF.",
+      "Chaque enseignant saisit les notes de ses interrogations et devoirs depuis un ordinateur ou son téléphone. Schoolvi applique automatiquement les coefficients officiels de chaque matière, calcule les moyennes générales, établit les rangs de classe et génère des bulletins clairs et prêts à imprimer en PDF.",
   },
   {
     question: "Comment Schoolvi m'aide-t-il à récupérer les impayés de scolarité ?",
     answer:
-      "Chaque élève dispose d'un échéancier personnalisé. Schoolvi vous montre en un coup d'œil qui est à jour et qui est en retard. En un clic, l'école envoie des relances courtoises sur WhatsApp aux parents avec le montant exact dû. Les versements sont enregistrés (espèces, chèque, T-Money, Flooz, MTN, Wave, Orange Money) avec délivrance instantanée d'un reçu numérique.",
+      "Chaque élève dispose d'un échéancier personnalisé. Schoolvi vous montre en un coup d'œil qui est à jour et qui est en retard. En un clic, l'école envoie des relances courtoises sur WhatsApp aux parents avec le montant exact dû. Chaque versement est enregistré, en espèces, par chèque ou par Mobile Money, avec un reçu numérique remis aussitôt.",
   },
   {
     question: "Quels modes de paiement des frais de scolarité sont supportés ?",
@@ -244,13 +245,13 @@ export const FAQ = [
 export const FINAL_CTA = {
   title: "Ce trimestre, modernisez votre école",
   description:
-    "Zéro impayé, des parents informés sur WhatsApp, des enseignants libérés de la paperasse. En 30 minutes, découvrez comment Schoolvi transforme la gestion de votre établissement au Togo, au Bénin, en Côte d'Ivoire et partout en Afrique de l'Ouest.",
+    "Zéro impayé, des parents informés sur WhatsApp, des enseignants libérés de la paperasse. En 30 minutes, voyons ensemble ce que Schoolvi change pour votre établissement.",
   cta: "Demander une démo gratuite",
 };
 
 export const FOOTER = {
-  tagline: "Le logiciel de gestion d'établissement scolaire n°1 en Afrique de l'Ouest (Togo, Bénin, Côte d'Ivoire, Sénégal...).",
-  location: "Lomé (Togo) · Cotonou (Bénin) · Abidjan (Côte d'Ivoire)",
+  tagline: "Le logiciel de gestion d'établissement scolaire n°1 en Afrique de l'Ouest.",
+  location: "Lomé, Togo",
   columns: [
     {
       title: "Produit",
@@ -266,22 +267,22 @@ export const FOOTER = {
     {
       title: "Pays couverts",
       links: [
-        { label: "🇹🇬 Togo", href: "/togo" },
-        { label: "🇧🇯 Bénin", href: "/benin" },
-        { label: "🇨🇮 Côte d'Ivoire", href: "/cote-divoire" },
-        { label: "🇸🇳 Sénégal", href: "/senegal" },
-        { label: "🇧🇫 Burkina Faso", href: "/burkina-faso" },
-        { label: "🇲🇱 Mali", href: "/mali" },
-        { label: "🇬🇳 Guinée", href: "/guinee" },
-        { label: "🇳🇪 Niger", href: "/niger" },
-        { label: "🇨🇲 Cameroun", href: "/cameroun" },
+        { label: "Togo", href: "/togo" },
+        { label: "Bénin", href: "/benin" },
+        { label: "Côte d'Ivoire", href: "/cote-divoire" },
+        { label: "Sénégal", href: "/senegal" },
+        { label: "Burkina Faso", href: "/burkina-faso" },
+        { label: "Mali", href: "/mali" },
+        { label: "Guinée", href: "/guinee" },
+        { label: "Niger", href: "/niger" },
+        { label: "Cameroun", href: "/cameroun" },
       ],
     },
     {
-      title: "Entreprise & Légal",
+      title: "Entreprise",
       links: [
-        { label: "Tarifs (0 FCFA école)", href: "/#tarifs" },
-        { label: "FAQ Référencement", href: "/#faq" },
+        { label: "Tarifs", href: "/#tarifs" },
+        { label: "FAQ", href: "/#faq" },
         { label: "Demander une démo", href: DEMO_URL },
         { label: "Se connecter", href: `${APP_URL}/login` },
         { label: "Conditions générales", href: "/cgu" },

@@ -10,6 +10,7 @@ const COUNTRIES_SERVED = [
   { "@type": "Country", name: "Mali" },
   { "@type": "Country", name: "Guinée" },
   { "@type": "Country", name: "Niger" },
+  { "@type": "Country", name: "Cameroun" },
 ];
 
 const organization = {

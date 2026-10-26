@@ -1,20 +1,40 @@
 import Link from "next/link";
-import { CheckCircle2Icon, ChevronRightIcon, MapPinIcon, ShieldCheckIcon, SmartphoneIcon, SparklesIcon } from "lucide-react";
+import type { ReactNode } from "react";
+import { CheckCircle2Icon, ChevronRightIcon, LandmarkIcon, MapPinIcon, PlusIcon, SmartphoneIcon } from "lucide-react";
 
+import { CountryMarquee } from "@/components/landing/country-marquee";
+import { FinalCta } from "@/components/landing/final-cta";
+import { FloatingCta } from "@/components/landing/floating-cta";
 import { HashScroll } from "@/components/landing/hash-scroll";
 import { ProductPanel } from "@/components/landing/product-panel";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 import { Blob } from "@/components/ui/blob";
+import { Flag } from "@/components/ui/flag";
 import { PillButton } from "@/components/ui/pill-button";
 import type { CountrySeo } from "@/content/countries";
 import { COUNTRIES } from "@/content/countries";
-import { CTA, DEMO_URL, PRICING, getWhatsAppDemoUrl } from "@/content/site";
-import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/site";
+import { CTA, PRICING, getWhatsAppDemoUrl } from "@/content/site";
+import { SITE_URL } from "@/lib/site";
+
+// Une forme par avantage, comme les cartes de l'accueil.
+const ADVANTAGE_BLOBS = [
+  { shape: "sun", tone: "brand" },
+  { shape: "leaf", tone: "mint" },
+  { shape: "pill", tone: "lilac" },
+  { shape: "leaf", tone: "sky" },
+] as const;
+
+/** « MEPST » depuis « Ministère ... (MEPST) ». */
+const ministryAcronym = (ministry: string) => ministry.match(/\(([^)]+)\)/)?.[1] ?? null;
 
 export function CountryPageTemplate({ country }: { country: CountrySeo }) {
   const otherCountries = COUNTRIES.filter((c) => c.slug !== country.slug);
-  const countryDemoUrl = getWhatsAppDemoUrl(country.name);
+  const countryDemoUrl = getWhatsAppDemoUrl(country.inName);
+  const acronym = ministryAcronym(country.ministry);
+  // La contribution est fixee en FCFA ; en Guinee (franc guineen) le montant
+  // n'est pas annonce.
+  const usesFcfa = country.currency === "XOF" || country.currency === "XAF";
 
   const localStructuredData = {
     "@context": "https://schema.org",
@@ -37,8 +57,10 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
         offers: {
           "@type": "Offer",
           price: 0,
-          priceCurrency: "XOF",
-          description: `Gratuit et illimité pour l'établissement. Contribution de ${PRICING.pricePerStudentPerYear} FCFA par élève et par an versée par les familles.`,
+          priceCurrency: country.currency,
+          description: usesFcfa
+            ? `Gratuit et illimité pour l'établissement. Contribution de ${PRICING.pricePerStudentPerYear} FCFA par élève et par an versée par les familles.`
+            : "Gratuit et illimité pour l'établissement. Contribution annuelle par élève versée par les familles.",
           availability: "https://schema.org/InStock",
           url: countryDemoUrl,
           areaServed: country.code,
@@ -71,220 +93,162 @@ export function CountryPageTemplate({ country }: { country: CountrySeo }) {
       <SiteHeader />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden pt-12 pb-16 sm:pb-24 sm:pt-20">
+        <section className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <Blob shape="sun" tone="brand" face className="absolute -left-10 top-[20%] hidden size-36 animate-float sm:block lg:left-4" />
-            <Blob shape="leaf" tone="mint" face className="absolute -right-8 top-[30%] hidden size-32 animate-float-slow sm:block lg:right-6" />
+            <Blob shape="arc" tone="pink" face className="absolute left-[18%] top-[6%] hidden size-32 animate-float-slow lg:block" />
+            <Blob shape="dot" tone="sky" className="absolute left-[62%] top-[5%] size-10 sm:size-12" />
+            <Blob shape="sun" tone="brand" face className="absolute -left-10 top-[58%] hidden size-36 animate-float sm:block lg:left-0" />
+            <Blob shape="leaf" tone="mint" face className="absolute -right-8 top-[56%] hidden size-32 animate-float-slow sm:block lg:right-[2%]" />
           </div>
 
-          <div className="relative mx-auto flex max-w-[1240px] flex-col items-center px-6 text-center">
-            {/* Breadcrumb */}
-            <nav aria-label="Fil d'Ariane" className="mb-6 flex items-center gap-2 text-[14px] text-muted-foreground">
-              <Link href="/" className="hover:text-ink">
+          <div className="relative mx-auto flex max-w-[1240px] flex-col items-center px-6 pb-16 pt-12 text-center sm:pb-24 sm:pt-20 md:pt-28">
+            <nav aria-label="Fil d'Ariane" className="flex items-center gap-1.5 text-[14px] text-muted-foreground">
+              <Link href="/" className="transition-colors hover:text-ink">
                 Accueil
               </Link>
               <ChevronRightIcon className="size-3.5" />
-              <span className="font-medium text-ink">Afrique de l&apos;Ouest</span>
+              <span>{country.region}</span>
               <ChevronRightIcon className="size-3.5" />
-              <span className="font-semibold text-brand">{country.name}</span>
+              <span className="font-medium text-ink">{country.name}</span>
             </nav>
 
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-light/70 px-4 py-1.5 text-[13px] font-semibold text-brand shadow-sm sm:text-[14px]">
-              <span className="text-base">{country.flag}</span>
-              <span>{country.heroBadge}</span>
+            <div className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-stone-300 bg-white py-1.5 pl-2 pr-4 text-[14px] font-medium text-ink">
+              <Flag code={country.code} className="h-4 w-6" />
+              {country.heroBadge}
             </div>
 
-            {/* H1 */}
-            <h1 className="font-display mt-6 max-w-4xl text-[38px] leading-[1.06] text-ink sm:text-[52px] md:text-[60px]">
-              {country.heroTitle}
-            </h1>
+            <h1 className="font-display mt-6 max-w-4xl text-[38px] leading-[1.06] text-ink sm:text-[52px] md:text-[60px]">{country.heroTitle}</h1>
 
-            {/* Subtitle */}
-            <p className="mt-6 max-w-3xl text-[17px] leading-relaxed text-muted-foreground sm:text-[19px]">
-              {country.heroSubtitle}
-            </p>
+            <p className="mt-6 max-w-2xl text-[16px] leading-relaxed text-muted-foreground sm:text-[17px] md:text-[19px]">{country.heroSubtitle}</p>
 
-            {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-10">
               <PillButton href={countryDemoUrl} variant="arrow">
                 {CTA.primary.label}
               </PillButton>
               <PillButton href={countryDemoUrl} variant="soft">
-                Échanger sur WhatsApp ({country.name})
+                Nous écrire sur WhatsApp
               </PillButton>
             </div>
 
-            {/* Trust points */}
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-[14px] font-medium text-muted-foreground sm:gap-8 sm:text-[15px]">
-              <span className="flex items-center gap-2">
-                <CheckCircle2Icon className="size-4 text-emerald-600" />
-                Gratuit pour l&apos;établissement
-              </span>
-              <span className="flex items-center gap-2">
-                <CheckCircle2Icon className="size-4 text-emerald-600" />
-                100% conforme {country.name}
-              </span>
-              <span className="flex items-center gap-2">
-                <CheckCircle2Icon className="size-4 text-emerald-600" />
-                Parents informés sur WhatsApp
-              </span>
-            </div>
+            <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-[15px] text-muted-foreground">
+              {["Gratuit pour l'établissement", acronym ? `100 % conforme ${acronym}` : `100 % conforme ${country.inName}`, "Parents informés sur WhatsApp"].map((point) => (
+                <li key={point} className="flex items-center gap-2">
+                  <CheckCircle2Icon className="size-4 text-emerald-600" />
+                  {point}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
-        {/* Product Preview */}
         <ProductPanel />
 
-        {/* Local Advantages Grid */}
-        <section className="mx-auto max-w-[1240px] px-4 pt-16 sm:px-6 sm:pt-24">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-[32px] leading-[1.1] text-ink sm:text-[42px]">
-              Pourquoi les écoles au {country.name} choisissent Schoolvi
-            </h2>
-            <p className="mt-3 text-[17px] text-muted-foreground">
-              Des fonctionnalités taillées pour le contexte éducatif et financier local.
-            </p>
+        <section className="mx-auto max-w-[1240px] px-4 pt-20 sm:px-6 sm:pt-32">
+          <h2 className="font-display max-w-2xl text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">
+            Pourquoi les écoles {country.ofName} choisissent Schoolvi
+          </h2>
+
+          <div className="mt-10 grid gap-2 md:grid-cols-2 sm:mt-12">
+            {country.advantages.map((adv, i) => {
+              const blob = ADVANTAGE_BLOBS[i % ADVANTAGE_BLOBS.length];
+              return (
+                <article key={adv.title} className="rounded-3xl border border-stone-300 bg-white p-6 sm:rounded-[32px] sm:p-9">
+                  <div className="grid size-16 place-items-center rounded-full bg-stone-100">
+                    <Blob shape={blob.shape} tone={blob.tone} face className="size-9" />
+                  </div>
+                  <h3 className="font-display mt-6 text-[24px] font-medium leading-[1.15] text-ink sm:mt-8 sm:text-[28px]">{adv.title}</h3>
+                  <p className="mt-2 max-w-lg text-[17px] leading-relaxed text-muted-foreground">{adv.description}</p>
+                </article>
+              );
+            })}
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {country.advantages.map((adv) => (
-              <article key={adv.title} className="rounded-3xl border border-stone-300 bg-white p-7 sm:p-9 shadow-sm">
-                <div className="flex size-12 items-center justify-center rounded-2xl bg-brand-light text-brand">
-                  <SparklesIcon className="size-6" />
-                </div>
-                <h3 className="font-display mt-6 text-[22px] font-semibold text-ink sm:text-[24px]">{adv.title}</h3>
-                <p className="mt-3 text-[16px] leading-relaxed text-muted-foreground">{adv.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* Country Specific Highlights banner */}
-        <section className="mx-auto max-w-[1240px] px-4 pt-16 sm:px-6">
-          <div className="rounded-3xl border border-stone-300 bg-stone-100 p-8 sm:p-12 md:p-14">
-            <div className="grid gap-8 md:grid-cols-3">
-              <div>
-                <p className="flex items-center gap-2 text-[14px] font-semibold uppercase tracking-wider text-brand">
-                  <MapPinIcon className="size-4" />
-                  Villes couvertes au {country.name}
-                </p>
-                <p className="font-display mt-3 text-[22px] text-ink">
-                  {country.mainCities.join(" · ")}
-                </p>
-                <p className="mt-2 text-[14px] text-muted-foreground">
-                  Accessible partout au {country.name}, même avec une connexion internet mobile modeste.
-                </p>
-              </div>
-
-              <div>
-                <p className="flex items-center gap-2 text-[14px] font-semibold uppercase tracking-wider text-brand">
-                  <SmartphoneIcon className="size-4" />
-                  Moyens de paiement acceptés
-                </p>
-                <p className="font-display mt-3 text-[22px] text-ink">
-                  {country.mobileMoney.join(" · ")}
-                </p>
-                <p className="mt-2 text-[14px] text-muted-foreground">
-                  Encaissement transparent, reçus instantanés et réconciliation financière sans écarts de caisse.
-                </p>
-              </div>
-
-              <div>
-                <p className="flex items-center gap-2 text-[14px] font-semibold uppercase tracking-wider text-brand">
-                  <ShieldCheckIcon className="size-4" />
-                  Conformité officielle
-                </p>
-                <p className="font-display mt-3 text-[22px] text-ink">
-                  {country.ministry}
-                </p>
-                <p className="mt-2 text-[14px] text-muted-foreground">
-                  Moyennes, coefficients et bulletins alignés sur les directives ministérielles officielles.
-                </p>
-              </div>
-            </div>
+          <div className="mt-2 grid rounded-3xl border border-stone-300 bg-white sm:rounded-[32px] md:grid-cols-3">
+            <LocalFact icon={<MapPinIcon className="size-4" />} label="Partout dans le pays">
+              <Chips items={country.mainCities.slice(0, 6)} />
+              <p className="mt-4 text-[15px] text-muted-foreground">Fonctionne avec une connexion mobile modeste.</p>
+            </LocalFact>
+            <LocalFact icon={<SmartphoneIcon className="size-4" />} label="Paiements suivis" className="border-t border-stone-300 md:border-l md:border-t-0">
+              <Chips items={country.mobileMoney} />
+              <p className="mt-4 text-[15px] text-muted-foreground">Chaque versement a son reçu, la caisse tombe juste.</p>
+            </LocalFact>
+            <LocalFact icon={<LandmarkIcon className="size-4" />} label="Programmes officiels" className="border-t border-stone-300 md:border-l md:border-t-0">
+              <p className="text-[17px] leading-snug text-ink">{country.ministry}</p>
+              <p className="mt-4 text-[15px] text-muted-foreground">Coefficients, moyennes et bulletins alignés sur ses directives.</p>
+            </LocalFact>
           </div>
         </section>
 
-        {/* Local FAQs */}
-        <section className="mx-auto max-w-[1240px] px-4 pt-20 sm:px-6 sm:pt-28">
+        <section className="mx-auto max-w-[1240px] px-4 pt-20 sm:px-6 sm:pt-32">
           <div className="grid gap-10 md:grid-cols-[1fr_1.4fr]">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-brand">FAQ {country.name}</span>
-              <h2 className="font-display mt-2 text-[32px] leading-[1.08] text-ink sm:text-[42px]">
-                Questions posées par les chefs d&apos;établissement au {country.name}
+              <h2 className="font-display text-[34px] leading-[1.08] text-ink sm:text-[40px] md:text-[55px]">
+                Questions
+                <br />
+                fréquentes
               </h2>
-              <p className="mt-4 text-[16px] text-muted-foreground">
-                Vous avez d&apos;autres questions spécifiques à votre inspection ou diocèse ? Nos équipes vous répondent en direct sur WhatsApp.
+              <p className="mt-4 max-w-sm text-[17px] text-muted-foreground">
+                Posées par les chefs d&apos;établissement {country.inName}. Une autre question ? On vous répond sur WhatsApp.
               </p>
               <div className="mt-6">
                 <PillButton href={countryDemoUrl} variant="arrow">
-                  Poser une question sur WhatsApp
+                  Poser une question
                 </PillButton>
               </div>
             </div>
-
-            <div className="space-y-4">
+            <div className="space-y-3">
               {country.localFaqs.map((faq) => (
-                <details key={faq.question} className="group rounded-2xl border border-stone-300 bg-white p-6 open:bg-stone-50">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[18px] font-medium text-ink">
+                <details key={faq.question} className="group rounded-2xl border border-stone-300 bg-white px-5 py-4 open:bg-stone-100 sm:rounded-3xl sm:px-7 sm:py-5">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-[17px] font-medium text-ink">
                     {faq.question}
-                    <span className="text-xl transition-transform group-open:rotate-45 text-muted-foreground">+</span>
+                    <PlusIcon className="size-5 shrink-0 transition-transform group-open:rotate-45" />
                   </summary>
-                  <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{faq.answer}</p>
+                  <p className="mt-3 max-w-2xl text-[16px] leading-relaxed text-muted-foreground">{faq.answer}</p>
                 </details>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Cross-Country Navigation (Internal Linking for SEO) */}
-        <section className="mx-auto max-w-[1240px] px-4 pt-20 sm:px-6 sm:pt-28">
-          <div className="rounded-3xl border border-stone-300 bg-white p-8 sm:p-12">
-            <h3 className="font-display text-[24px] text-ink">
-              Découvrez aussi Schoolvi dans d&apos;autres pays d&apos;Afrique de l&apos;Ouest :
-            </h3>
-            <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              {otherCountries.map((other) => (
-                <Link
-                  key={other.slug}
-                  href={`/${other.slug}`}
-                  className="group flex items-center justify-between rounded-2xl border border-stone-200 p-4 transition-colors hover:border-brand/40 hover:bg-stone-50"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">{other.flag}</span>
-                    <div>
-                      <p className="font-medium text-ink group-hover:text-brand">Schoolvi au {other.name}</p>
-                      <p className="text-xs text-muted-foreground">{other.capital}</p>
-                    </div>
-                  </div>
-                  <ChevronRightIcon className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1" />
-                </Link>
-              ))}
-            </div>
-          </div>
+        <section className="mx-auto max-w-[1240px] px-4 pt-20 sm:px-6 sm:pt-32">
+          <p className="text-center text-[16px] text-muted-foreground sm:text-[17px]">Schoolvi équipe aussi les écoles de ces pays</p>
+          <CountryMarquee countries={otherCountries} className="mt-6" />
         </section>
 
-        {/* Final CTA */}
-        <section className="mx-auto max-w-[1240px] px-6 py-20 text-center sm:py-28">
-          <div className="mx-auto max-w-2xl">
-            <h2 className="font-display text-[34px] leading-tight text-ink sm:text-[48px]">
-              Rejoignez les établissements scolaires du {country.name} qui gagnent du temps avec Schoolvi
-            </h2>
-            <p className="mt-4 text-[17px] text-muted-foreground">
-              Démarrage en 30 minutes. Zéro frais pour votre école.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <PillButton href={countryDemoUrl} variant="arrow">
-                Demander votre démonstration gratuite
-              </PillButton>
-            </div>
-          </div>
-        </section>
+        <FinalCta
+          title={`Rejoignez les écoles ${country.ofName} qui gagnent du temps`}
+          description="Démarrage en 30 minutes, aucun frais pour votre établissement. Parlons-en sur WhatsApp."
+          cta="Demander votre démo gratuite"
+          href={countryDemoUrl}
+        />
       </main>
 
       <SiteFooter />
+      <FloatingCta />
     </>
+  );
+}
+
+function LocalFact({ icon, label, className, children }: { icon: ReactNode; label: string; className?: string; children: ReactNode }) {
+  return (
+    <div className={`p-6 sm:p-9 ${className ?? ""}`}>
+      <p className="flex items-center gap-2 text-[15px] text-muted-foreground">
+        <span className="grid size-8 place-items-center rounded-full bg-stone-100 text-brand">{icon}</span>
+        {label}
+      </p>
+      <div className="mt-5">{children}</div>
+    </div>
+  );
+}
+
+function Chips({ items }: { items: string[] }) {
+  return (
+    <ul className="flex flex-wrap gap-2">
+      {items.map((item) => (
+        <li key={item} className="rounded-full bg-stone-100 px-3 py-1 text-[15px] text-ink">
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 }

@@ -1,6 +1,13 @@
 export type CountrySeo = {
   slug: string;
   name: string;
+  /** « au Togo », « en Guinée » : la forme qui suit « les écoles ». */
+  inName: string;
+  /** « du Togo », « de Guinée ». */
+  ofName: string;
+  region: "Afrique de l'Ouest" | "Afrique centrale";
+  /** Code ISO 4217 de la monnaie locale (XOF, XAF, GNF). */
+  currency: string;
   officialName: string;
   flag: string;
   code: string;
@@ -28,6 +35,10 @@ export const COUNTRIES: CountrySeo[] = [
   {
     slug: "togo",
     name: "Togo",
+    inName: "au Togo",
+    ofName: "du Togo",
+    region: "Afrique de l'Ouest",
+    currency: "XOF",
     officialName: "République Togolaise",
     flag: "🇹🇬",
     code: "TG",
@@ -97,6 +108,10 @@ export const COUNTRIES: CountrySeo[] = [
   {
     slug: "benin",
     name: "Bénin",
+    inName: "au Bénin",
+    ofName: "du Bénin",
+    region: "Afrique de l'Ouest",
+    currency: "XOF",
     officialName: "République du Bénin",
     flag: "🇧🇯",
     code: "BJ",
@@ -165,6 +180,10 @@ export const COUNTRIES: CountrySeo[] = [
   {
     slug: "cote-divoire",
     name: "Côte d'Ivoire",
+    inName: "en Côte d'Ivoire",
+    ofName: "de Côte d'Ivoire",
+    region: "Afrique de l'Ouest",
+    currency: "XOF",
     officialName: "République de Côte d'Ivoire",
     flag: "🇨🇮",
     code: "CI",
@@ -232,6 +251,10 @@ export const COUNTRIES: CountrySeo[] = [
   {
     slug: "senegal",
     name: "Sénégal",
+    inName: "au Sénégal",
+    ofName: "du Sénégal",
+    region: "Afrique de l'Ouest",
+    currency: "XOF",
     officialName: "République du Sénégal",
     flag: "🇸🇳",
     code: "SN",
@@ -299,6 +322,10 @@ export const COUNTRIES: CountrySeo[] = [
   {
     slug: "burkina-faso",
     name: "Burkina Faso",
+    inName: "au Burkina Faso",
+    ofName: "du Burkina Faso",
+    region: "Afrique de l'Ouest",
+    currency: "XOF",
     officialName: "Burkina Faso",
     flag: "🇧🇫",
     code: "BF",
@@ -366,6 +393,10 @@ export const COUNTRIES: CountrySeo[] = [
   {
     slug: "mali",
     name: "Mali",
+    inName: "au Mali",
+    ofName: "du Mali",
+    region: "Afrique de l'Ouest",
+    currency: "XOF",
     officialName: "République du Mali",
     flag: "🇲🇱",
     code: "ML",
@@ -432,13 +463,17 @@ export const COUNTRIES: CountrySeo[] = [
   {
     slug: "guinee",
     name: "Guinée",
+    inName: "en Guinée",
+    ofName: "de Guinée",
+    region: "Afrique de l'Ouest",
+    currency: "GNF",
     officialName: "République de Guinée",
     flag: "🇬🇳",
     code: "GN",
     capital: "Conakry",
     mainCities: ["Conakry", "Kankan", "Nzérékoré", "Kindia", "Labé", "Mamou", "Boké"],
     ministry: "Ministère de l'Enseignement Pré-Universitaire et de l'Alphabétisation (MEPU-A)",
-    mobileMoney: ["Orange Money Guinée", "MTN Mobile Money Guinée", "Espèces", "GNF"],
+    mobileMoney: ["Orange Money Guinée", "MTN Mobile Money Guinée", "Espèces", "Virement"],
     seoTitle: "Logiciel de gestion scolaire en Guinée · Schoolvi (Conakry, Kankan)",
     seoDescription:
       "Le logiciel de gestion d'établissement scolaire n°1 en Guinée (Conakry, Kankan, Kindia...). Gestion des effectifs, bulletins scolaires conformes MEPU-A, encaissement Orange Money et MTN MoMo, suivi WhatsApp. Gratuit pour l'école.",
@@ -459,7 +494,7 @@ export const COUNTRIES: CountrySeo[] = [
       {
         title: "Paiements Orange Money & MTN MoMo Guinée",
         description:
-          "Encaissement fluide des frais scolaires en Francs Guinéens (GNF) via Orange Money et MTN. Édition de reçus numériques conformes et traçabilité absolue.",
+          "Chaque versement des familles, en espèces, par Orange Money ou par MTN, est enregistré avec son reçu. La direction voit à tout moment qui a payé et qui est en retard.",
       },
       {
         title: "Bulletins conformes aux normes MEPU-A",
@@ -479,9 +514,9 @@ export const COUNTRIES: CountrySeo[] = [
     ],
     localFaqs: [
       {
-        question: "Schoolvi gère-t-il la monnaie locale (Franc Guinéen - GNF) ?",
+        question: "Schoolvi fonctionne-t-il avec le franc guinéen (GNF) ?",
         answer:
-          "Oui, la facturation des frais scolaires, les échéanciers et les reçus d'encaissement peuvent être paramétrés en Francs Guinéens (GNF) ou en FCFA.",
+          "Aujourd'hui, Schoolvi affiche les montants en FCFA. Si votre école facture en francs guinéens, écrivez-nous sur WhatsApp pour en parler avant le démarrage.",
       },
       {
         question: "Les bulletins correspondent-ils aux exigences des DPE et DCE ?",
@@ -498,6 +533,10 @@ export const COUNTRIES: CountrySeo[] = [
   {
     slug: "niger",
     name: "Niger",
+    inName: "au Niger",
+    ofName: "du Niger",
+    region: "Afrique de l'Ouest",
+    currency: "XOF",
     officialName: "République du Niger",
     flag: "🇳🇪",
     code: "NE",
@@ -564,6 +603,10 @@ export const COUNTRIES: CountrySeo[] = [
   {
     slug: "cameroun",
     name: "Cameroun",
+    inName: "au Cameroun",
+    ofName: "du Cameroun",
+    region: "Afrique centrale",
+    currency: "XAF",
     officialName: "République du Cameroun",
     flag: "🇨🇲",
     code: "CM",
@@ -624,7 +667,7 @@ export const COUNTRIES: CountrySeo[] = [
       {
         question: "Comment organiser une démo pour notre groupe scolaire au Cameroun ?",
         answer:
-          "Cliquez sur « Demander une démo » pour fixer un créneau en visio de 30 minutes avec nos spécialistes de la gestion scolaire.",
+          "Cliquez sur « Demander une démo » : vous écrivez directement à notre équipe sur WhatsApp et nous fixons ensemble un créneau de 30 minutes.",
       },
     ],
   },

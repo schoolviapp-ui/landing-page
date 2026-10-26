@@ -227,3 +227,45 @@ input[type="range"].estimator::-moz-range-thumb {
   color: var(--ink);
   font-weight: 600;
 }
+
+/* Bandeau defilant des pays : la piste contient deux fois la liste et glisse
+   de la moitie de sa largeur, donc la boucle ne se voit pas. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee var(--marquee-duration, 45s) linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .marquee-track {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+  }
+  .marquee-track > [aria-hidden="true"] {
+    display: none;
+  }
+}

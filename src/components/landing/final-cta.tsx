@@ -2,7 +2,9 @@ import { Blob } from "@/components/ui/blob";
 import { PillButton } from "@/components/ui/pill-button";
 import { CTA, FINAL_CTA } from "@/content/site";
 
-export function FinalCta() {
+type FinalCtaProps = { title?: string; description?: string; cta?: string; href?: string };
+
+export function FinalCta({ title = FINAL_CTA.title, description = FINAL_CTA.description, cta = FINAL_CTA.cta, href = CTA.primary.href }: FinalCtaProps = {}) {
   return (
     <section id="contact" className="relative mx-auto max-w-[1240px] scroll-mt-24 overflow-hidden px-6 pb-8 pt-24 sm:pt-40">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
@@ -14,11 +16,11 @@ export function FinalCta() {
 
       <div className="relative mx-auto flex max-w-2xl flex-col items-center text-center">
         <Blob shape="sun" tone="brand" face className="mb-8 size-20 animate-float md:mb-10 md:size-24" />
-        <h2 className="font-display text-[40px] leading-[1.04] text-ink sm:text-[44px] md:text-[64px]">{FINAL_CTA.title}</h2>
-        <p className="mt-5 text-[17px] text-muted-foreground md:text-[19px]">{FINAL_CTA.description}</p>
+        <h2 className="font-display text-[40px] leading-[1.04] text-ink sm:text-[44px] md:text-[64px]">{title}</h2>
+        <p className="mt-5 text-[17px] text-muted-foreground md:text-[19px]">{description}</p>
         <div className="mt-8">
-          <PillButton href={CTA.primary.href} variant="arrow">
-            {FINAL_CTA.cta}
+          <PillButton href={href} variant="arrow">
+            {cta}
           </PillButton>
         </div>
       </div>
