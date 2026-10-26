@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 
 export function Logo({ className }: { className?: string }) {
   return (
-    <Link href="/" aria-label="Schoolvi - accueil" className={cn("inline-flex items-center", className)}>
-      <Image src="/brand/logo.png" alt="Schoolvi" width={787} height={317} priority className="h-10 w-auto sm:h-12" />
+    <Link href="/" aria-label="Schoolvi - Logiciel de gestion d'établissement scolaire en Afrique" className={cn("inline-flex items-center", className)}>
+      <Image src="/brand/logo.png" alt="Schoolvi - Logiciel de gestion d'établissement scolaire" width={787} height={317} priority className="h-10 w-auto sm:h-12" />
     </Link>
   );
 }

@@ -8,25 +8,25 @@ type CaptureMeta = { src: string; alt: string; height?: number };
 const CAPTURES: Record<ModuleTabId, CaptureMeta> = {
   dashboard: {
     src: "/screens/dashboard.webp",
-    alt: "Tableau de bord Schoolvi : indicateurs élèves, enseignants, classes, réclamations et fonds collectés",
+    alt: "Schoolvi - Logiciel de gestion d'établissement scolaire : tableau de bord des indicateurs élèves, enseignants et trésorerie en Afrique de l'Ouest",
   },
   students: {
     src: "/screens/students.webp",
-    alt: "Profil d'un élève dans Schoolvi : moyenne du trimestre, rang, évolution et bulletin par matière",
+    alt: "Schoolvi - Gestion des élèves et bulletins scolaires : dossier scolaire, moyenne trimestrielle, rang et notes",
   },
   fees: {
     src: "/screens/fees.webp",
-    alt: "Caisse et recouvrement dans Schoolvi : total recouvré, reste à recouvrer, situation des élèves et encaissement",
+    alt: "Schoolvi - Recouvrement des frais de scolarité et Mobile Money : suivi des impayés, reçus numériques et trésorerie",
     height: 1142,
   },
   assistant: {
     src: "/screens/assistant.webp",
-    alt: "Assistant IA de Schoolvi : posez une question, il répond avec les données de l'établissement",
+    alt: "Schoolvi - Assistant IA pour la direction d'école et l'administration des établissements scolaires",
     height: 1142,
   },
   timetable: {
     src: "/screens/timetable.webp",
-    alt: "Emploi du temps hebdomadaire d'une classe dans Schoolvi, par matiere, enseignant et salle",
+    alt: "Schoolvi - Emploi du temps scolaire automatisé par classe, professeur et salle de cours",
   },
 };
 

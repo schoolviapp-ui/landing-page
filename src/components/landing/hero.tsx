@@ -18,6 +18,13 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto flex max-w-[1240px] flex-col items-center px-6 pb-16 pt-20 text-center sm:pb-24 sm:pt-32 md:pt-48">
+        {HERO.badge && (
+          <div style={delay(0)} className="rise inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-light/70 px-4 py-1.5 text-[13px] font-semibold text-brand shadow-sm sm:text-[14px]">
+            <span className="size-1.5 rounded-full bg-brand animate-pulse" />
+            {HERO.badge}
+          </div>
+        )}
+
         <h1
           style={delay(1)}
           className="rise font-display mt-6 text-[40px] leading-[1.04] text-ink sm:text-[56px] md:text-[64px]"

@@ -6,6 +6,7 @@ import { Hero } from "@/components/landing/hero";
 import { Modules } from "@/components/landing/modules";
 import { Pricing } from "@/components/landing/pricing";
 import { ProductPanel } from "@/components/landing/product-panel";
+import { RegionalCoverage } from "@/components/landing/regional-coverage";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 import { StructuredData } from "@/components/landing/structured-data";
@@ -22,6 +23,7 @@ export default function HomePage() {
         <Hero />
         <ProductPanel />
         <ValueProps />
+        <RegionalCoverage />
         <Modules />
         <Unified />
         <Pricing />

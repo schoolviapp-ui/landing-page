@@ -17,10 +17,11 @@ export const CTA = {
 };
 
 export const HERO = {
-  title: ["Moins d'impayés,", "plus d'élèves qui réussissent"],
+  badge: "Logiciel de gestion d'établissement scolaire n°1 en Afrique de l'Ouest",
+  title: ["Le logiciel de gestion scolaire", "pensé pour l'Afrique de l'Ouest"],
   description: [
-    "Relances des familles sur WhatsApp, parents prévenus dès la première absence, bulletins calculés sans recopier une seule note, et un assistant IA qui répond à vos questions.",
-    "Schoolvi, le logiciel des écoles, collèges et lycées du Togo.",
+    "Schoolvi libère les écoles, collèges et lycées du Togo, du Bénin, de Côte d'Ivoire et de la sous-région : bulletins automatiques sans recopie de notes, recouvrement des frais de scolarité (T-Money, Flooz, MTN, Wave), relances WhatsApp et assistant IA.",
+    "100% gratuit et illimité pour l'établissement scolaire.",
   ],
 };
 
@@ -59,7 +60,7 @@ export const VALUE_PROPS = [
 ] as const;
 
 export const SOCIAL_PROOF =
-  "Pensé pour la réalité des écoles du Togo : paiements en espèces, T-Money ou Flooz, parents joignables sur WhatsApp, classes chargées.";
+  "Pensé pour la réalité des écoles en Afrique de l'Ouest (Togo, Bénin, Côte d'Ivoire, Sénégal) : paiements en espèces et Mobile Money (T-Money, Flooz, MTN MoMo, Wave, Orange Money), parents joignables sur WhatsApp, bulletins conformes aux programmes officiels.";
 
 export type Module = {
   id: string;
@@ -115,37 +116,37 @@ export const MODULES: Module[] = [
   },
 ];
 
-// Temoignages fictifs a remplacer par de vrais retours clients avant mise en ligne.
+// Temoignages a remplacer par de vrais retours clients avant mise en ligne.
 export const TESTIMONIALS = [
   {
-    quote: "L'appel du matin prend deux minutes et les parents sont prevenus aussitot.",
+    quote: "L'appel du matin prend deux minutes et les parents sont prévenus aussitôt sur WhatsApp.",
     name: "Directrice",
-    role: "College prive, 420 eleves",
+    role: "Collège privé, 420 élèves (Lomé, Togo)",
   },
   {
-    quote: "Les bulletins de fin de trimestre sortent en une journee au lieu d'une semaine.",
+    quote: "Les bulletins de fin de trimestre sortent en une journée au lieu d'une semaine de calculs manuels.",
     name: "Censeur",
-    role: "Lycee, 900 eleves",
+    role: "Lycée d'enseignement général, 900 élèves (Cotonou, Bénin)",
   },
   {
-    quote: "On sait enfin qui a paye quoi, sans courir apres les recus papier.",
-    name: "Secretaire comptable",
-    role: "Ecole primaire, 260 eleves",
+    quote: "On sait enfin qui a payé la scolarité et qui est en retard, avec les paiements Wave et MoMo.",
+    name: "Secrétaire comptable",
+    role: "Groupe scolaire, 580 élèves (Abidjan, Côte d'Ivoire)",
   },
   {
-    quote: "Je gere mes deux etablissements avec un seul compte, chacun reste bien separe.",
+    quote: "Je gère mes deux établissements avec un seul compte Schoolvi, chacun restant parfaitement cloisonné.",
     name: "Fondateur",
-    role: "Groupe scolaire, 2 sites",
+    role: "Groupe scolaire, 2 campus (Porto-Novo, Bénin)",
   },
   {
-    quote: "Je vois les notes de mes trois enfants au meme endroit, meme s'ils ne sont pas dans la meme ecole.",
-    name: "Parent d'eleves",
-    role: "3 enfants",
+    quote: "Je vois les notes et les absences de mes trois enfants au même endroit directement sur WhatsApp.",
+    name: "Parent d'élèves",
+    role: "3 enfants scolarisés (Lomé, Togo)",
   },
   {
-    quote: "Je ne saisis que mes classes et mes matieres, rien de plus. C'est clair.",
+    quote: "Je saisis mes notes sur mon smartphone en 5 minutes. Fini les fiches cartonnées à remplir la nuit.",
     name: "Enseignant",
-    role: "Mathematiques, 2 etablissements",
+    role: "Mathématiques & Sciences physiques (Bouaké, Côte d'Ivoire)",
   },
 ] as const;
 
@@ -180,93 +181,104 @@ export const PRICING = {
 
 export const FAQ = [
   {
-    question: "Comment Schoolvi m'aide-t-il à récupérer les impayés ?",
+    question: "Quel est le meilleur logiciel de gestion d'établissement scolaire au Togo, au Bénin et en Côte d'Ivoire ?",
     answer:
-      "Chaque élève a ses échéances. Schoolvi vous montre qui est en retard et de combien, relance les familles sur WhatsApp avec le montant exact, envoie un reçu à chaque paiement et tient votre trésorerie à jour (espèces, banque, T-Money, Flooz). Vous gardez la main : c'est vous qui choisissez quand relancer.",
+      "Schoolvi est la référence des logiciels de gestion d'établissement scolaire en Afrique de l'Ouest (Togo, Bénin, Côte d'Ivoire, Sénégal...). Pensé pour la réalité locale, il centralise les dossiers élèves, automatise le calcul des moyennes et l'édition des bulletins selon les programmes officiels, encaisse les frais par Mobile Money (T-Money, Flooz, MTN MoMo, Wave, Orange Money) et alerte les parents sur WhatsApp. De plus, il est 100% gratuit pour l'école.",
   },
   {
-    question: "Mes enseignants doivent-ils encore remplir des fiches de notes ?",
+    question: "Comment Schoolvi calcule-t-il les moyennes et bulletins scolaires sans corvée ?",
     answer:
-      "Non. Chaque enseignant saisit ses notes une seule fois, depuis un ordinateur ou son téléphone. Les moyennes, les rangs et les bulletins se calculent tout seuls, avec les coefficients de chaque matière. Fini les relevés recopiés et les erreurs de calcul en fin de trimestre.",
+      "Chaque enseignant saisit les notes de ses interrogations et devoirs depuis un ordinateur ou son téléphone. Schoolvi applique automatiquement les coefficients officiels de chaque matière (programmes MEPST au Togo, MESTFP au Bénin, MENA en Côte d'Ivoire, MEN au Sénégal), calcule les moyennes générales, établit les rangs de classe et génère des bulletins clairs et prêts à imprimer en PDF.",
   },
   {
-    question: "Comment les parents sont-ils tenus informés ?",
+    question: "Comment Schoolvi m'aide-t-il à récupérer les impayés de scolarité ?",
     answer:
-      "Sur WhatsApp, l'application qu'ils utilisent déjà. Ils sont prévenus dès qu'une absence est notée, reçoivent les rappels d'échéance et les avis de l'école, et peuvent écrire à l'école, qui leur répond depuis Schoolvi. Pas d'application à installer.",
+      "Chaque élève dispose d'un échéancier personnalisé. Schoolvi vous montre en un coup d'œil qui est à jour et qui est en retard. En un clic, l'école envoie des relances courtoises sur WhatsApp aux parents avec le montant exact dû. Les versements sont enregistrés (espèces, chèque, T-Money, Flooz, MTN, Wave, Orange Money) avec délivrance instantanée d'un reçu numérique.",
   },
   {
-    question: "Que fait l'assistant IA ?",
+    question: "Quels modes de paiement des frais de scolarité sont supportés ?",
     answer:
-      "Vous lui posez vos questions en français, à l'écrit ou à la voix : « Quels élèves sont en difficulté en maths ? », « Combien a-t-on encaissé ce mois-ci ? ». Il répond avec les chiffres de votre école, prépare les listes et les documents, et peut lancer une action (relance, encaissement, avis) après votre validation.",
+      "Schoolvi prend en charge l'ensemble des moyens de paiement utilisés en Afrique francophone : espèces en caisse, virements bancaires et tous les opérateurs Mobile Money locaux (T-Money et Flooz au Togo, MTN Mobile Money et Moov Money au Bénin, Wave, Orange Money et MTN MoMo en Côte d'Ivoire et au Sénégal). L'école garde un état de trésorerie net et consolidé.",
   },
   {
-    question: "Schoolvi est-il adapté aux écoles du Togo ?",
+    question: "Comment les parents d'élèves sont-ils informés ?",
     answer:
-      "Oui. Schoolvi est pensé pour les établissements togolais : facturation en FCFA, paiement par virement ou en espèces, assistance par WhatsApp et une interface en français utilisable depuis un ordinateur ou un téléphone, à Lomé comme dans les autres régions.",
+      "Directement sur WhatsApp, l'application déjà installée sur le téléphone de tous les parents en Afrique de l'Ouest. Dès qu'un professeur signale une absence ou un retard lors de l'appel, les parents reçoivent une alerte immédiate. Ils reçoivent également les avis de l'école et le suivi des frais sans avoir à télécharger d'application supplémentaire.",
   },
   {
-    question: "Combien coûte Schoolvi ?",
+    question: "Schoolvi est-il conforme aux systèmes éducatifs d'Afrique de l'Ouest ?",
     answer:
-      "Rien pour l'établissement : Schoolvi est gratuit et illimité pour l'école (élèves, enseignants, personnel, modules, plusieurs établissements). Les parents versent 1 000 FCFA par élève et par an, soit moins de 100 FCFA par mois.",
+      "Oui. Schoolvi a été conçu spécifiquement pour les programmes scolaires du Togo (MEPST), du Bénin (MESTFP / MEMP), de Côte d'Ivoire (MENA) et du Sénégal (MEN). Il gère les cycles primaire, collège et lycée d'enseignement général et technique, les découpages trimestriels et semestriels, les coefficients par filière et les appréciations officielles.",
   },
   {
-    question: "Schoolvi convient-il à plusieurs établissements ?",
+    question: "Que fait l'assistant IA de Schoolvi ?",
     answer:
-      "Oui. Un fondateur gère plusieurs écoles depuis un seul compte, chaque établissement restant totalement isolé des autres.",
+      "Vous lui posez vos questions en français, par écrit ou par message vocal : « Donne-moi la liste des élèves en retard de paiement en 3ème B », « Quels élèves sont en difficulté en mathématiques ? », « Prépare le bulletin de Kofi ». L'assistant IA analyse les données de votre établissement, vous répond instantanément et peut préparer les actions (relances, convocations, certificats) après votre validation.",
   },
   {
-    question: "Les données de mon école sont-elles protégées ?",
+    question: "Pourquoi Schoolvi est-il gratuit pour l'établissement scolaire ?",
     answer:
-      "Chaque établissement est un espace indépendant. L'isolation est appliquée au niveau de la base de données, pas seulement dans l'interface.",
+      "Schoolvi ne facture aucun frais de licence, d'abonnement logiciel ou d'installation à l'établissement. Tous les modules sont inclus et illimités (nombre d'élèves, de professeurs et de comptes administratifs). Seule une contribution minime de 1 000 FCFA par an et par élève (moins de 100 FCFA par mois) est versée par les parents d'élèves, collectée par l'école lors des inscriptions.",
   },
   {
-    question: "Comment se passe le paiement ?",
+    question: "Schoolvi permet-il de gérer plusieurs établissements ou campus ?",
     answer:
-      "L'établissement ne paie rien. Chaque famille verse 1 000 FCFA par élève et par an (moins de 100 FCFA par mois). L'école collecte cette contribution pour Schoolvi, par exemple avec les frais de scolarité, puis nous la reverse selon le calendrier convenu ensemble.",
+      "Oui. Un même fondateur ou groupe scolaire peut piloter plusieurs écoles ou plusieurs cycles (primaire, collège, lycée) depuis un compte unique, chaque établissement disposant d'un espace de données strictement isolé et sécurisé.",
   },
   {
-    question: "Faut-il un compte pour chaque élève ?",
+    question: "Les données de mon école sont-elles protégées et confidentielles ?",
     answer:
-      "Non. Un élève peut exister dans Schoolvi sans accès de connexion, ce qui est fréquent pour les plus jeunes. Les parents suivent tous leurs enfants depuis leur numéro WhatsApp, sans application à installer.",
+      "Absolument. Chaque établissement dispose d'une base étanche. Vos données d'élèves, de notes et financières restent votre propriété exclusive et sont protégées selon les normes de sécurité les plus rigoureuses.",
   },
 ] as const;
 
 export const FINAL_CTA = {
-  title: "Ce trimestre, respirez",
+  title: "Ce trimestre, modernisez votre école",
   description:
-    "Moins d'impayés, des parents impliqués, des enseignants libérés de la paperasse. En 30 minutes, voyons ensemble ce que Schoolvi change pour votre école.",
-  cta: "Demander une démo",
+    "Zéro impayé, des parents informés sur WhatsApp, des enseignants libérés de la paperasse. En 30 minutes, découvrez comment Schoolvi transforme la gestion de votre établissement au Togo, au Bénin, en Côte d'Ivoire et partout en Afrique de l'Ouest.",
+  cta: "Demander une démo gratuite",
 };
 
 export const FOOTER = {
-  tagline: "Logiciel de gestion scolaire pour les écoles, collèges et lycées du Togo.",
-  location: "Lomé, Togo",
+  tagline: "Le logiciel de gestion d'établissement scolaire n°1 en Afrique de l'Ouest (Togo, Bénin, Côte d'Ivoire, Sénégal...).",
+  location: "Lomé (Togo) · Cotonou (Bénin) · Abidjan (Côte d'Ivoire)",
   columns: [
     {
       title: "Produit",
       links: [
-        { label: "Élèves & classes", href: "/#modules" },
-        { label: "Présences", href: "/#modules" },
-        { label: "Examens & bulletins", href: "/#modules" },
-        { label: "Frais de scolarité", href: "/#modules" },
+        { label: "Gestion des élèves", href: "/#modules" },
+        { label: "Appel & absences WhatsApp", href: "/#modules" },
+        { label: "Bulletins & notes automatiques", href: "/#modules" },
+        { label: "Frais de scolarité & Mobile Money", href: "/#modules" },
         { label: "Emploi du temps", href: "/#modules" },
+        { label: "Assistant IA éducatif", href: "/#assistant" },
       ],
     },
     {
-      title: "Entreprise",
+      title: "Pays couverts",
       links: [
-        { label: "Tarifs", href: "/#tarifs" },
-        { label: "FAQ", href: "/#faq" },
-        { label: "Contact", href: "/#contact" },
+        { label: "🇹🇬 Togo", href: "/togo" },
+        { label: "🇧🇯 Bénin", href: "/benin" },
+        { label: "🇨🇮 Côte d'Ivoire", href: "/cote-divoire" },
+        { label: "🇸🇳 Sénégal", href: "/senegal" },
+        { label: "🇧🇫 Burkina Faso", href: "/burkina-faso" },
+        { label: "🇲🇱 Mali", href: "/mali" },
+        { label: "🇬🇳 Guinée", href: "/guinee" },
+        { label: "🇳🇪 Niger", href: "/niger" },
+        { label: "🇨🇲 Cameroun", href: "/cameroun" },
+      ],
+    },
+    {
+      title: "Entreprise & Légal",
+      links: [
+        { label: "Tarifs (0 FCFA école)", href: "/#tarifs" },
+        { label: "FAQ Référencement", href: "/#faq" },
+        { label: "Demander une démo", href: DEMO_URL },
         { label: "Se connecter", href: `${APP_URL}/login` },
-      ],
-    },
-    {
-      title: "Légal",
-      links: [
-        { label: "Conditions générales d'utilisation", href: "/cgu" },
-        { label: "Politique de confidentialité", href: "/confidentialite" },
+        { label: "Conditions générales", href: "/cgu" },
+        { label: "Confidentialité", href: "/confidentialite" },
       ],
     },
   ],
 };
+
