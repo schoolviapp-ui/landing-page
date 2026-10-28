@@ -7,7 +7,7 @@ import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Conditions générales d'utilisation",
   description:
-    "Conditions générales d'utilisation de Schoolvi, logiciel de gestion scolaire pour les établissements du Togo : service gratuit pour l'établissement, contribution des familles de 1 000 FCFA par élève et par an collectée par l'école, obligations et responsabilités.",
+    "Conditions générales d'utilisation de Schoolvi, logiciel de gestion scolaire pour les établissements du Togo : service gratuit pour l'établissement, contribution des familles de 1 500 FCFA par élève et par an collectée par l'école, obligations et responsabilités.",
   alternates: { canonical: "/cgu" },
   robots: { index: true, follow: true },
 };

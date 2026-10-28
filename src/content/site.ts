@@ -169,8 +169,8 @@ export const UNIFIED = {
 export const PRICING = {
   title: "Gratuit pour votre établissement",
   description:
-    "Schoolvi ne coûte rien à l'école, sans limite d'élèves, d'enseignants ni de modules. Seule une contribution de 1 000 FCFA par élève et par an est payée par les parents.",
-  pricePerStudentPerYear: 1000,
+    "Schoolvi ne coûte rien à l'école, sans limite d'élèves, d'enseignants ni de modules. Seule une contribution de 1 500 FCFA par élève et par an est payée par les parents.",
+  pricePerStudentPerYear: 1500,
   currency: "FCFA",
   minStudents: 50,
   maxStudents: 3000,
@@ -185,7 +185,7 @@ export const PRICING = {
     "Espace parents sur WhatsApp",
     "Assistance par email et WhatsApp",
   ],
-  note: "Aucun abonnement ni frais d'installation pour l'établissement. Les parents versent 1 000 FCFA par élève et par an, soit moins de 100 FCFA par mois, collectés par l'école.",
+  note: "Aucun abonnement ni frais d'installation pour l'établissement. Les parents versent 1 500 FCFA par élève et par an, soit 125 FCFA par mois, collectés par l'école.",
   cta: "Demander une démo",
 };
 
@@ -228,7 +228,7 @@ export const FAQ = [
   {
     question: "Pourquoi Schoolvi est-il gratuit pour l'établissement scolaire ?",
     answer:
-      "Schoolvi ne facture aucun frais de licence, d'abonnement logiciel ou d'installation à l'établissement. Tous les modules sont inclus et illimités (nombre d'élèves, de professeurs et de comptes administratifs). Seule une contribution minime de 1 000 FCFA par an et par élève (moins de 100 FCFA par mois) est versée par les parents d'élèves, collectée par l'école lors des inscriptions.",
+      "Schoolvi ne facture aucun frais de licence, d'abonnement logiciel ou d'installation à l'établissement. Tous les modules sont inclus et illimités (nombre d'élèves, de professeurs et de comptes administratifs). Seule une contribution minime de 1 500 FCFA par an et par élève (125 FCFA par mois) est versée par les parents d'élèves, collectée par l'école lors des inscriptions.",
   },
   {
     question: "Schoolvi permet-il de gérer plusieurs établissements ou campus ?",

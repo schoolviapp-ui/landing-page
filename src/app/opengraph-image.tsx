@@ -53,7 +53,7 @@ export default async function OpenGraphImage() {
           >
             Gratuit pour l’établissement
           </div>
-          <span style={{ fontSize: 26, color: "#535353" }}>1 000 FCFA / élève / an payés par les parents</span>
+          <span style={{ fontSize: 26, color: "#535353" }}>1 500 FCFA / élève / an payés par les parents</span>
         </div>
       </div>
     ),

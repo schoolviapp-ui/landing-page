@@ -78,7 +78,7 @@ export const COUNTRIES: CountrySeo[] = [
       },
       {
         title: "Gratuit pour l'école",
-        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
+        description: "Aucun abonnement. Les parents versent 1 500 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -145,7 +145,7 @@ export const COUNTRIES: CountrySeo[] = [
       },
       {
         title: "Zéro coût pour l'école",
-        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
+        description: "Aucun abonnement. Les parents versent 1 500 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -211,7 +211,7 @@ export const COUNTRIES: CountrySeo[] = [
       },
       {
         title: "Gratuit pour l'école",
-        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
+        description: "Aucun abonnement. Les parents versent 1 500 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -277,7 +277,7 @@ export const COUNTRIES: CountrySeo[] = [
       },
       {
         title: "Gratuit pour l'école",
-        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
+        description: "Aucun abonnement. Les parents versent 1 500 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -343,7 +343,7 @@ export const COUNTRIES: CountrySeo[] = [
       },
       {
         title: "Zéro coût pour l'école",
-        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
+        description: "Aucun abonnement. Les parents versent 1 500 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -408,7 +408,7 @@ export const COUNTRIES: CountrySeo[] = [
       },
       {
         title: "Gratuit pour l'école",
-        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
+        description: "Aucun abonnement. Les parents versent 1 500 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
@@ -538,7 +538,7 @@ export const COUNTRIES: CountrySeo[] = [
       },
       {
         title: "Zéro coût pour l'école",
-        description: "Les parents versent 1 000 FCFA par élève et par an, moins de 100 FCFA par mois.",
+        description: "Les parents versent 1 500 FCFA par élève et par an, soit 125 FCFA par mois.",
       },
     ],
     localFaqs: [
@@ -604,7 +604,7 @@ export const COUNTRIES: CountrySeo[] = [
       },
       {
         title: "Gratuit pour l'école",
-        description: "Aucun abonnement. Les parents versent 1 000 FCFA par élève et par an.",
+        description: "Aucun abonnement. Les parents versent 1 500 FCFA par élève et par an.",
       },
     ],
     localFaqs: [
